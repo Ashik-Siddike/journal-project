@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
-<body class="bg-[var(--bg-main)] text-[var(--text-main)] pt-16 font-sans">
+<body class="bg-[#f5f5f5] text-[var(--text-main)] pt-16 font-sans">
 
     <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
@@ -62,165 +62,256 @@
         </div>
     </header>
 
-    <!-- Browse Hero -->
-    <section class="bg-[#0b1120] text-white py-12 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <h1 class="text-3xl md:text-4xl font-bold font-outfit mb-4">Browse 4,752 Journals and 33,656 Books</h1>
-            <div class="max-w-2xl w-full mx-auto relative mt-6">
-                <input type="text" placeholder="Search for journal or book title"
-                    class="w-full px-6 py-4 rounded-full text-slate-900 border-none focus:ring-4 focus:ring-[var(--focus-ring)] shadow-lg pr-16 bg-white outline-none">
-                <button
-                    class="absolute right-2 top-2 p-2 w-10 h-10 bg-[var(--primary)] text-white rounded-full flex items-center justify-center hover:bg-[var(--primary-hover)] transition-colors">
-                    <i class="ph ph-magnifying-glass font-bold"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Browse Content -->
-    <main class="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+    <main class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
 
-        <!-- Sidebar Domain Filter -->
-        <aside class="w-full lg:w-72 flex-shrink-0">
-            <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 sticky top-24">
-                <h3 class="font-bold font-outfit text-lg mb-4 border-b border-slate-100 pb-4">Filter by Domain</h3>
+        <!-- Sidebar Filters -->
+        <aside class="w-full lg:w-[280px] flex-shrink-0">
+            <!-- Promo Block -->
+            <div class="bg-white border text-center border-slate-200 mb-6 p-6">
+                <div class="flex justify-center mb-4 gap-4">
+                    <i class="ph ph-telescope text-[56px] text-[#E9711C] opacity-80"></i>
+                    <i class="ph ph-tree-structure text-[56px] text-[#007398] opacity-80"></i>
+                </div>
+                <p class="text-[15px] text-slate-700 leading-snug mb-3">Find more opportunities to publish your
+                    research:</p>
+                <a href="#"
+                    class="text-[20px] font-outfit font-bold text-[#007398] hover:underline leading-tight block">Browse
+                    Calls for Papers</a>
+            </div>
 
-                <div class="space-y-4">
-                    <div class="group">
-                        <button
-                            class="w-full flex items-center justify-between text-left text-sm font-medium text-slate-800 hover:text-[var(--primary)] mb-2">
-                            Physical Sciences and Engineering
-                            <i class="ph ph-caret-down"></i>
-                        </button>
-                        <div class="pl-4 border-l overflow-hidden border-slate-200 space-y-2 mt-2 transition-all">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 text-[var(--primary)] rounded border-slate-300">
-                                <span class="text-sm text-slate-600">Chemical Engineering</span>
+            <!-- Main Filter Block -->
+            <div>
+                <h2 class="text-[22px] font-outfit text-slate-800 mb-6 font-normal">Refine publications by</h2>
+
+                <!-- Dropdowns -->
+                <div class="mb-4">
+                    <label class="block text-[13px] text-slate-600 mb-2">Select subject area</label>
+                    <select
+                        class="w-full border-b-2 border-slate-800 bg-white py-2 px-0 text-slate-800 text-[15px] font-medium outline-none cursor-pointer appearance-none rounded-none focus:border-[#E9711C] transition-colors">
+                        <option>All subject areas</option>
+                        <option>Physical Sciences and Engineering</option>
+                        <option>Life Sciences</option>
+                        <option>Health Sciences</option>
+                        <option>Social Sciences and Humanities</option>
+                    </select>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-[13px] text-slate-400 mb-2">Select secondary Subject area</label>
+                    <select disabled
+                        class="w-full border-b border-slate-300 bg-white py-2 px-0 text-slate-400 text-[15px] font-medium outline-none cursor-not-allowed appearance-none rounded-none">
+                        <option>All secondary subject areas</option>
+                    </select>
+                </div>
+
+                <!-- Checkbox Groups -->
+                <div class="space-y-6">
+                    <!-- Publication type -->
+                    <div>
+                        <h4 class="text-[13px] text-slate-600 mb-4 font-normal">Publication type</h4>
+                        <div class="space-y-[14px]">
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Journals</span>
                             </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 text-[var(--primary)] rounded border-slate-300">
-                                <span class="text-sm text-slate-600">Computer Science</span>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Books</span>
                             </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 text-[var(--primary)] rounded border-slate-300">
-                                <span class="text-sm text-slate-600">Mathematics</span>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Textbooks</span>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Handbooks</span>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Reference works</span>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Book series</span>
                             </label>
                         </div>
+                    </div>
+
+                    <!-- Journal status -->
+                    <div>
+                        <h4 class="text-[13px] text-slate-600 mb-4 font-normal">Journal status</h4>
+                        <div class="space-y-[14px]">
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Accepts
+                                    submissions</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Access type -->
+                    <div>
+                        <h4 class="text-[13px] text-slate-600 mb-4 font-normal">Access type</h4>
+                        <div class="space-y-[14px] mb-4">
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black italic">Open
+                                    access</span>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox"
+                                    class="w-[18px] h-[18px] mt-[2px] border-slate-400 rounded-sm text-[#007398] focus:ring-[#007398] cursor-pointer">
+                                <span class="text-[15px] text-slate-800 group-hover:text-black">Contains <span
+                                        class="italic">open access</span></span>
+                            </label>
+                        </div>
+                        <a href="#"
+                            class="text-[14px] text-[#007398] hover:underline flex items-center gap-2 font-medium">
+                            <i class="ph ph-download-simple"></i> Download holdings reports
+                        </a>
                     </div>
                 </div>
             </div>
         </aside>
 
-        <!-- Alpha Filter & Results -->
+        <!-- Main Browse Results -->
         <div class="flex-grow">
-            <!-- A-Z Navigation -->
-            <div
-                class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm mb-6 flex flex-wrap gap-2 items-center text-sm font-medium">
-                <span class="text-slate-500 mr-2">Filter by title:</span>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--primary)] text-white">#</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">A</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">B</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-[var(--primary)] bg-blue-50 font-bold border border-blue-200">C</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">D</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">E</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">F</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">G</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">H</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">I</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">J</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">K</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">L</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">M</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">N</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">O</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">P</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">Q</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">R</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">S</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">T</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">U</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">V</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">W</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">X</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">Y</a>
-                <a href="#"
-                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 text-slate-700">Z</a>
+            <!-- Header Section -->
+            <div class="mb-10">
+                <h1 class="text-[32px] text-slate-800 font-outfit font-normal mb-8">Browse 5,882 journals and 38,017
+                    books</h1>
+
+                <div class="mb-6">
+                    <label class="block text-[15px] text-slate-600 mb-2">Filter by journal or book title</label>
+                    <input type="text"
+                        class="w-full border border-slate-400 p-4 text-[16px] outline-none hover:border-slate-500 focus:border-[#E9711C] focus:ring-1 focus:ring-[#E9711C] transition-colors rounded-none bg-white">
+                </div>
+
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center gap-2 text-[#007398] hover:underline text-[15px]">
+                        <i class="ph ph-magnifying-glass text-lg"></i>
+                        <span class="text-slate-700">Are you looking for a specific article or book chapter? Use <span
+                                class="text-[#007398]">advanced search.</span></span>
+                    </a>
+                    <a href="#" class="flex items-center gap-2 text-[#007398] hover:underline text-[15px]">
+                        <i class="ph ph-magnifying-glass text-lg"></i>
+                        <span class="text-slate-700">Are you looking for a journal to publish your research? <span
+                                class="text-[#007398]">Select journals to compare.</span></span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Publications List -->
-            <div
-                class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden divide-y divide-slate-100">
-                <!-- Pub Item 1 -->
-                <a href="journal.html"
-                    class="flex flex-col sm:flex-row gap-4 p-6 hover:bg-slate-50 transition-colors group">
-                    <img src="https://via.placeholder.com/80x110" alt="Journal cover"
-                        class="w-20 h-auto object-cover rounded shadow-sm border border-slate-200 hidden sm:block">
-                    <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span
-                                class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase tracking-widest">Journal</span>
-                        </div>
-                        <h3
-                            class="text-xl font-bold font-outfit text-slate-900 group-hover:text-[var(--primary)] transition-colors mb-2">
-                            Cell Reports</h3>
-                        <p class="text-sm text-slate-600 mb-2 max-w-2xl line-clamp-2">Offers open-access publishing of
-                            peer-reviewed papers across the entire life sciences spectrum...</p>
-                        <div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
-                            <span class="flex items-center gap-1"><i class="ph ph-chat-teardrop font-bold"></i> Contains
-                                Open Access</span>
-                            <span>ISSN: 2211-1247</span>
-                        </div>
-                    </div>
-                </a>
+            <!-- List and Alphabet Nav Layout -->
+            <div class="flex items-start gap-8 relative">
 
-                <!-- Pub Item 2 -->
-                <a href="#" class="flex flex-col sm:flex-row gap-4 p-6 hover:bg-slate-50 transition-colors group">
-                    <img src="https://via.placeholder.com/80x110" alt="Book cover"
-                        class="w-20 h-auto object-cover rounded shadow-sm border border-slate-200 hidden sm:block">
-                    <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span
-                                class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase tracking-widest">Book</span>
+                <!-- Publications List -->
+                <div class="flex-grow pb-12">
+                    <h2 class="text-[28px] text-[#E9711C] font-outfit mb-6">A</h2>
+
+                    <div class="space-y-8">
+                        <!-- Pub Item 1 -->
+                        <div class="group">
+                            <a href="journal.html"
+                                class="inline-block text-[18px] text-[#007398] font-medium hover:underline mb-1">
+                                A New Era in Alzheimer's Research
+                            </a>
+                            <p class="text-[14px] text-slate-700 mb-1">Pathogenesis, Prevention, and Treatment</p>
+                            <p class="text-[14px] text-slate-600">Book &bull; 2024</p>
                         </div>
-                        <h3
-                            class="text-xl font-bold font-outfit text-slate-900 group-hover:text-[var(--primary)] transition-colors mb-2">
-                            Cognitive Psychology (Third Edition)</h3>
-                        <p class="text-sm text-slate-600 mb-2 max-w-2xl">A comprehensive guide covering the foundational
-                            aspects of cognitive modeling and neuroscience.</p>
-                        <div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
-                            <span>Published: 2025</span>
-                            <span>ISBN: 978-0-12-823456-7</span>
+
+                        <!-- Pub Item 2 -->
+                        <div class="group">
+                            <a href="#"
+                                class="inline-block text-[18px] text-[#007398] font-medium hover:underline mb-1">
+                                A Practical Guide for Finding Interventions That Work for Autistic People (Second
+                                Edition)
+                            </a>
+                            <p class="text-[14px] text-slate-700 mb-1">Diversity-Affirming Evidence-Based Practice</p>
+                            <p class="text-[14px] text-slate-600">Book &bull; 2024</p>
+                        </div>
+
+                        <!-- Pub Item 3 -->
+                        <div class="group">
+                            <a href="#"
+                                class="inline-block text-[18px] text-[#007398] font-medium hover:underline mb-1">
+                                A Practical Guide to Functional Assessment and Treatment for Severe Problem Behavior
+                            </a>
+                            <p class="text-[14px] text-slate-600">Book &bull; 2024</p>
+                        </div>
+
+                        <!-- Pub Item 4 -->
+                        <div class="group">
+                            <a href="#"
+                                class="inline-block text-[18px] text-[#007398] font-medium hover:underline mb-1">
+                                A Practical Introduction to Virtual Reality
+                            </a>
+                            <p class="text-[14px] text-slate-700 mb-1">From Concepts to Executables</p>
+                            <p class="text-[14px] text-slate-600">Book &bull; 2024</p>
+                        </div>
+
+                        <!-- Pub Item 5 -->
+                        <div class="group">
+                            <a href="#"
+                                class="inline-block text-[18px] text-[#007398] font-medium hover:underline mb-1">
+                                AACE Clinical Case Reports
+                            </a>
+                            <p class="text-[14px] text-slate-600">Journal &bull; <em class="italic text-slate-800">Open
+                                    access</em></p>
+                        </div>
+
+                        <!-- Pub Item 6 -->
+                        <div class="group">
+                            <a href="#"
+                                class="inline-block text-[18px] text-[#007398] font-medium hover:underline mb-1">
+                                AACE Endocrinology and Diabetes
+                            </a>
+                            <p class="text-[14px] text-slate-600">Journal &bull; Contains <em
+                                    class="italic text-slate-800">open access</em></p>
                         </div>
                     </div>
-                </a>
+                </div>
+
+                <!-- Sticky A-Z Navigation -->
+                <div class="w-8 flex-shrink-0 flex flex-col items-center gap-[6px] sticky top-[100px] text-[14px]">
+                    <a href="#" class="text-[#E9711C] w-full text-center hover:underline">A</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">B</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">C</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">D</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">E</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">F</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">G</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">H</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">I</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">J</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">K</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">L</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">M</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">N</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">O</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">P</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">Q</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">R</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">S</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">T</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">U</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">V</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">W</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">X</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">Y</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">Z</a>
+                    <a href="#" class="text-[#007398] w-full text-center hover:underline">0-9</a>
+                </div>
+
             </div>
-
         </div>
     </main>
 
