@@ -35,7 +35,7 @@
                 <a href="browse.html"
                     class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
                     & Books</a>
-                <a href="#"
+                <a href="index.html"
                     class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
                     <i class="ph ph-question text-lg pb-[2px]"></i> Help
                 </a>
@@ -73,7 +73,7 @@
             <div class="max-w-[1300px] mx-auto">
                 <div class="mb-6 flex flex-col items-center">
                     <h1 class="text-2xl text-slate-800 tracking-tight font-normal">Search for peer-reviewed journal
-                        articles and book chapters (including <a href="#"
+                        articles and book chapters (including <a href="browse.html"
                             class="text-[var(--primary)] hover:underline cursor-pointer">open access</a> content)</h1>
                 </div>
 
@@ -120,74 +120,168 @@
             </div>
         </section>
 
-        <!-- Banner Feature Section (LeapSpace Clone) -->
+        <!-- Banner Feature Section (Toggle: LeapSpace & Researcher of the Future) -->
         <section class="max-w-[1440px] mx-auto w-full border-b border-slate-200">
-            <div class="flex flex-col md:flex-row w-full min-h-[380px]">
-                <!-- Left Beige Section (70%) -->
-                <div
-                    class="w-full md:w-[72%] bg-[#EFECE5] py-14 px-8 lg:px-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+            <!-- Relative container to hold both banners -->
+            <div class="relative w-full overflow-hidden" style="height: 380px;">
 
-                    <!-- Text Content -->
-                    <div class="w-full md:w-1/2 z-10">
-                        <div class="flex items-center gap-2 mb-4">
-                            <div class="w-4 h-4 bg-[#FF5833]"></div>
-                            <span class="text-slate-800 font-medium text-lg tracking-wide">LeapSpace</span>
-                        </div>
-                        <h2 class="text-4xl lg:text-[44px] font-serif text-slate-900 leading-[1.15] mt-1 mb-8"
-                            style="font-family: Georgia, serif;">The research-grade<br>AI workspace</h2>
-                    </div>
-
-                    <!-- 3D Perspective Images (Placeholder emulation) -->
+                <!-- B1: LeapSpace Banner -->
+                <div id="banner-leapspace"
+                    class="absolute inset-0 flex flex-col md:flex-row w-full h-full transition-opacity duration-500 ease-in-out opacity-100 z-20">
+                    <!-- Left Beige Section (70%) -->
                     <div
-                        class="w-full md:w-1/2 h-64 relative flex items-center justify-center z-10 translate-x-4 lg:translate-x-12 perspective-[1000px]">
-                        <!-- Wrapper for 3D group -->
-                        <div class="flex gap-2 transform rotate-y-[-15deg] rotate-x-[5deg]">
-                            <!-- Image Slices -->
-                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-800 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
-                                style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400'); transform: translateZ(20px);">
+                        class="w-full md:w-[72%] h-full bg-[#f3efe6] px-8 lg:px-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+                        <!-- Text Content -->
+                        <div class="w-full md:w-1/2 z-10 py-10 md:py-0">
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="w-4 h-4 bg-[#FF5833]"></div>
+                                <span class="text-slate-800 font-medium text-lg tracking-wide">LeapSpace</span>
                             </div>
-                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-700 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
-                                style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=400'); transform: translateZ(40px);">
-                            </div>
-                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-900 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
-                                style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400'); transform: translateZ(60px);">
-                            </div>
-                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-[#001736] bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
-                                style="background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=400'); transform: translateZ(80px);">
+                            <h2 class="text-4xl lg:text-[44px] font-serif text-slate-900 leading-[1.15] mt-1 mb-8"
+                                style="font-family: Georgia, serif;">The research-grade<br>AI workspace</h2>
+                        </div>
+
+                        <!-- 3D Perspective Images -->
+                        <div
+                            class="hidden md:flex w-full md:w-1/2 h-full relative items-center justify-center z-10 translate-x-4 lg:translate-x-12 perspective-[1000px]">
+                            <!-- Wrapper for 3D group -->
+                            <div class="flex gap-2 transform rotate-y-[-15deg] rotate-x-[5deg]">
+                                <!-- Image Slices -->
+                                <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-800 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                    style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400'); transform: translateZ(20px);">
+                                </div>
+                                <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-700 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                    style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=400'); transform: translateZ(40px);">
+                                </div>
+                                <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-900 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                    style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400'); transform: translateZ(60px);">
+                                </div>
+                                <div class="w-16 lg:w-20 h-48 lg:h-56 bg-[#001736] bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                    style="background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=400'); transform: translateZ(80px);">
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Right White Section (30%) -->
+                    <div
+                        class="w-full md:w-[28%] h-full bg-white py-10 md:py-14 px-8 lg:px-12 flex flex-col justify-center border-l border-slate-100">
+                        <p class="text-[15px] font-normal text-slate-800 leading-relaxed max-w-[260px] mb-8">
+                            Transparent, AI-assisted research support in one workspace, helping researchers explore
+                            literature, funding opportunities and ideas with confidence.
+                        </p>
+                        <a href="index.html"
+                            class="group inline-flex items-center justify-between border border-slate-900 text-slate-900 px-5 py-3 hover:bg-slate-900 hover:text-white transition-colors bg-white font-medium text-sm w-fit gap-6 mb-4">
+                            Discover LeapSpace <i
+                                class="ph ph-arrow-up-right font-bold transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Right White Section (30%) -->
-                <div
-                    class="w-full md:w-[28%] bg-white py-14 px-8 lg:px-12 flex flex-col justify-center border-l border-slate-100">
-                    <p class="text-[15px] font-normal text-slate-800 leading-relaxed max-w-[260px] mb-8">
-                        Transparent, AI-assisted research support in one workspace, helping researchers explore
-                        literature, funding opportunities and ideas with confidence.
-                    </p>
-                    <a href="#"
-                        class="group inline-flex items-center justify-between border border-slate-900 text-slate-900 px-5 py-3 hover:bg-slate-900 hover:text-white transition-colors bg-white font-medium text-sm w-fit gap-6 mb-4">
-                        Discover LeapSpace <i
-                            class="ph ph-arrow-up-right font-bold transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-                    </a>
+                <!-- B2: Researcher of the Future Banner -->
+                <div id="banner-researcher"
+                    class="absolute inset-0 flex flex-col md:flex-row w-full h-full transition-opacity duration-500 ease-in-out opacity-0 z-10 pointer-events-none">
+                    <!-- Left Full Image Section (70%) with shadow overlay -->
+                    <div class="w-full md:w-[72%] h-full relative bg-cover bg-center px-8 lg:px-16 flex flex-col justify-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1582719478250-c8940cbb17b6?auto=format&fit=crop&q=80&w=1200');">
+                        <!-- Dark Gradient Overlay -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-[#001736]/90 via-[#001736]/60 to-transparent">
+                        </div>
+
+                        <!-- Text Content relative over overlay -->
+                        <div class="relative z-10 max-w-lg pt-10 md:pt-0">
+                            <h2 class="text-4xl lg:text-[44px] font-serif text-white leading-[1.15] mt-1 mb-8"
+                                style="font-family: Georgia, serif;">Researcher of the<br>future</h2>
+                            <p class="text-white text-lg lg:text-xl font-light">A <span class="italic">Confidence in
+                                    research</span> report</p>
+                        </div>
+                    </div>
+
+                    <!-- Right White Section (30%) -->
+                    <div
+                        class="w-full md:w-[28%] h-full bg-white py-10 md:py-14 px-8 lg:px-12 flex flex-col justify-center border-l border-slate-100">
+                        <p class="text-[15px] font-normal text-slate-800 leading-relaxed max-w-[260px] mb-8">
+                            See how researchers are turning disruption into discovery in our new, global report.
+                        </p>
+                        <a href="index.html"
+                            class="group inline-flex items-center justify-between border border-slate-900 text-slate-900 px-5 py-3 hover:bg-slate-900 hover:text-white transition-colors bg-white font-medium text-sm w-fit gap-6 mb-4">
+                            Read the report <i
+                                class="ph ph-arrow-up-right font-bold transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Dots Nav Bar -->
             <div
                 class="w-full border-t border-slate-200 bg-slate-50 py-3 flex justify-center items-center gap-10 text-xs font-medium text-slate-500">
-                <button class="flex flex-col items-center gap-1 text-slate-800 border-b-2 border-slate-800 pb-1">
-                    <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                <button id="navbtn-leapspace" onclick="switchBanner('leapspace')"
+                    class="group flex flex-col items-center gap-1 hover:text-slate-800 transition-colors pb-1 border-b-2 border-slate-800 text-slate-800">
+                    <!-- Dot wrapper -->
+                    <div id="dot-leapspace" class="w-2.5 h-2.5 rounded-full bg-slate-600 transition-colors"></div>
                     LeapSpace
                 </button>
-                <button
-                    class="flex flex-col items-center gap-1 hover:text-slate-800 transition-colors pb-1 border-b-2 border-transparent hover:border-slate-300">
-                    <div class="w-2.5 h-2.5 rounded-full border border-slate-400"></div>
+                <button id="navbtn-researcher" onclick="switchBanner('researcher')"
+                    class="group flex flex-col items-center gap-1 hover:text-slate-800 transition-colors pb-1 border-b-2 border-transparent hover:border-slate-300">
+                    <!-- Dot wrapper -->
+                    <div id="dot-researcher"
+                        class="w-2.5 h-2.5 rounded-full border border-slate-400 bg-transparent transition-colors"></div>
                     Confidence in research
                 </button>
             </div>
         </section>
+
+        <!-- Inline Script for Banner Toggle -->
+        <script>
+            function switchBanner(target) {
+                const bLeapspace = document.getElementById('banner-leapspace');
+                const bResearcher = document.getElementById('banner-researcher');
+                const btnLeapspace = document.getElementById('navbtn-leapspace');
+                const btnResearcher = document.getElementById('navbtn-researcher');
+                const dotLeapspace = document.getElementById('dot-leapspace');
+                const dotResearcher = document.getElementById('dot-researcher');
+
+                if (target === 'leapspace') {
+                    // Show LeapSpace
+                    bLeapspace.style.opacity = '1';
+                    bLeapspace.style.zIndex = '20';
+                    bLeapspace.style.pointerEvents = 'auto';
+
+                    // Hide Researcher
+                    bResearcher.style.opacity = '0';
+                    bResearcher.style.zIndex = '10';
+                    bResearcher.style.pointerEvents = 'none';
+
+                    // Update UI Buttons
+                    btnLeapspace.className = 'group flex flex-col items-center gap-1 transition-colors pb-1 border-b-2 border-slate-800 text-slate-800';
+                    btnResearcher.className = 'group flex flex-col items-center gap-1 hover:text-slate-800 transition-colors pb-1 border-b-2 border-transparent hover:border-slate-300 text-slate-500';
+
+                    // Update Dots
+                    dotLeapspace.className = 'w-2.5 h-2.5 rounded-full bg-slate-600 transition-colors';
+                    dotResearcher.className = 'w-2.5 h-2.5 rounded-full border border-slate-400 bg-transparent transition-colors';
+                } else {
+                    // Show Researcher
+                    bResearcher.style.opacity = '1';
+                    bResearcher.style.zIndex = '20';
+                    bResearcher.style.pointerEvents = 'auto';
+
+                    // Hide LeapSpace
+                    bLeapspace.style.opacity = '0';
+                    bLeapspace.style.zIndex = '10';
+                    bLeapspace.style.pointerEvents = 'none';
+
+                    // Update UI Buttons
+                    btnResearcher.className = 'group flex flex-col items-center gap-1 transition-colors pb-1 border-b-2 border-slate-800 text-slate-800';
+                    btnLeapspace.className = 'group flex flex-col items-center gap-1 hover:text-slate-800 transition-colors pb-1 border-b-2 border-transparent hover:border-slate-300 text-slate-500';
+
+                    // Update Dots
+                    dotResearcher.className = 'w-2.5 h-2.5 rounded-full bg-slate-600 transition-colors';
+                    dotLeapspace.className = 'w-2.5 h-2.5 rounded-full border border-slate-400 bg-transparent transition-colors';
+                }
+            }
+        </script>
 
         <!-- Explore Scientific Section -->
         <section class="py-16 px-4 bg-white border-b border-slate-200">
@@ -251,21 +345,21 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Artificial
                                     intelligence in education: A systematic literature review</a>
                                 <p class="text-xs text-slate-800">Expert Systems with Applications, Volume 252, Part A
                                 </p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">"They
                                     destroyed my life because I do not feel like a man anymore": An Interpretative
                                     Phenomenological Analysis of Men's lived experiences of rape victimization</a>
                                 <p class="text-xs text-slate-800">Heliyon, Volume 6, Issue 5</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Artificial
                                     intelligence (AI) applications for marketing: A literature-based study</a>
                                 <p class="text-xs text-slate-800">International Journal of Intelligent Networks, Volume
@@ -279,19 +373,20 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="journal.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Computational
                                     and Theoretical Chemistry</a>
                                 <p class="text-xs text-slate-800">Volume 1258</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="journal.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Alexandria
                                     Engineering Journal</a>
                                 <p class="text-xs text-slate-800">Volume 139</p>
                             </article>
                             <article>
-                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Journal
+                                <a href="journal.html"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Journal
                                     of Systems Architecture</a>
                                 <p class="text-xs text-slate-800">Volume 173</p>
                             </article>
@@ -334,19 +429,19 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">The
                                     syndemic of COVID-19 and the surface...</a>
                                 <p class="text-xs text-slate-800">Public Health, Volume 189</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Upcoming
                                     Rare Intensity Assessment in Clinical Trials...</a>
                                 <p class="text-xs text-slate-800">The Lancet, Volume 398</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="index.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Base
                                     jumping supervision: lessons learned...</a>
                                 <p class="text-xs text-slate-800">Heliyon, Volume 7, Issue 2</p>
@@ -358,18 +453,20 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="journal.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Neurology
                                     (English Edition)</a>
                                 <p class="text-xs text-slate-800">Volume 145, Issue 2</p>
                             </article>
                             <article>
-                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">BBA -
+                                <a href="index.html"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">BBA -
                                     General Subjects</a>
                                 <p class="text-xs text-slate-800">Volume 1869</p>
                             </article>
                             <article>
-                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Virus
+                                <a href="article.html"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Virus
                                     Research</a>
                                 <p class="text-xs text-slate-800">Volume 286</p>
                             </article>
@@ -410,19 +507,19 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">The
                                     syndemic of COVID-19 and the surface...</a>
                                 <p class="text-xs text-slate-800">Public Health, Volume 189</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Pharmacologic
                                     intervention in advanced Alzheimer's disease...</a>
                                 <p class="text-xs text-slate-800">Cell Reports Medicine, Volume 2, Issue 1</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Upcoming
                                     Rare Intensity Assessment in Clinical Trials...</a>
                                 <p class="text-xs text-slate-800">The Lancet, Volume 398</p>
@@ -434,19 +531,20 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="journal.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline block mb-1">International
                                     Journal of Cardiology</a>
                                 <p class="text-xs text-slate-800">Volume 315</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="journal.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline block mb-1">European
                                     Journal of Pharmaceutical Sciences</a>
                                 <p class="text-xs text-slate-800">Volume 152</p>
                             </article>
                             <article>
-                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Journal
+                                <a href="journal.html"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Journal
                                     of Affective Disorders</a>
                                 <p class="text-xs text-slate-800">Volume 279</p>
                             </article>
@@ -491,19 +589,19 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Literature
                                     review as a research methodology: An overview and guidelines</a>
                                 <p class="text-xs text-slate-800">Journal of Business Research, Volume 104</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Teleworking
                                     in the COVID-19 era: A comparative study of stages and career benefits</a>
                                 <p class="text-xs text-slate-800">Journal of Vocational Behavior, Volume 119</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="article.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Artificial
                                     intelligence in education: A systematic literature review</a>
                                 <p class="text-xs text-slate-800">Expert Systems with Applications, Volume 252, Part A
@@ -516,12 +614,12 @@
                         <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
                         <div class="space-y-8">
                             <article>
-                                <a href="#"
+                                <a href="index.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Cognition</a>
                                 <p class="text-xs text-slate-800">Volume 206</p>
                             </article>
                             <article>
-                                <a href="#"
+                                <a href="journal.html"
                                     class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Information
                                     Processing & Management</a>
                                 <p class="text-xs text-slate-800">Volume 58</p>
@@ -538,33 +636,33 @@
                 <span class="text-[17px] text-slate-800 font-normal">Browse by Publication Title:</span>
                 <div
                     class="flex flex-wrap justify-center gap-x-[18px] gap-y-2 text-[var(--primary)] font-medium text-[17px]">
-                    <a href="#" class="hover:underline">A</a>
-                    <a href="#" class="hover:underline">B</a>
-                    <a href="#" class="hover:underline">C</a>
-                    <a href="#" class="hover:underline">D</a>
-                    <a href="#" class="hover:underline">E</a>
-                    <a href="#" class="hover:underline">F</a>
-                    <a href="#" class="hover:underline">G</a>
-                    <a href="#" class="hover:underline">H</a>
-                    <a href="#" class="hover:underline">I</a>
-                    <a href="#" class="hover:underline">J</a>
-                    <a href="#" class="hover:underline">K</a>
-                    <a href="#" class="hover:underline">L</a>
-                    <a href="#" class="hover:underline">M</a>
-                    <a href="#" class="hover:underline">N</a>
-                    <a href="#" class="hover:underline">O</a>
-                    <a href="#" class="hover:underline">P</a>
-                    <a href="#" class="hover:underline">Q</a>
-                    <a href="#" class="hover:underline">R</a>
-                    <a href="#" class="hover:underline">S</a>
-                    <a href="#" class="hover:underline">T</a>
-                    <a href="#" class="hover:underline">U</a>
-                    <a href="#" class="hover:underline">V</a>
-                    <a href="#" class="hover:underline">W</a>
-                    <a href="#" class="hover:underline">X</a>
-                    <a href="#" class="hover:underline">Y</a>
-                    <a href="#" class="hover:underline">Z</a>
-                    <a href="#" class="hover:underline">0-9</a>
+                    <a href="browse.html" class="hover:underline">A</a>
+                    <a href="browse.html" class="hover:underline">B</a>
+                    <a href="browse.html" class="hover:underline">C</a>
+                    <a href="browse.html" class="hover:underline">D</a>
+                    <a href="browse.html" class="hover:underline">E</a>
+                    <a href="browse.html" class="hover:underline">F</a>
+                    <a href="browse.html" class="hover:underline">G</a>
+                    <a href="browse.html" class="hover:underline">H</a>
+                    <a href="browse.html" class="hover:underline">I</a>
+                    <a href="browse.html" class="hover:underline">J</a>
+                    <a href="browse.html" class="hover:underline">K</a>
+                    <a href="browse.html" class="hover:underline">L</a>
+                    <a href="browse.html" class="hover:underline">M</a>
+                    <a href="browse.html" class="hover:underline">N</a>
+                    <a href="browse.html" class="hover:underline">O</a>
+                    <a href="browse.html" class="hover:underline">P</a>
+                    <a href="browse.html" class="hover:underline">Q</a>
+                    <a href="browse.html" class="hover:underline">R</a>
+                    <a href="browse.html" class="hover:underline">S</a>
+                    <a href="browse.html" class="hover:underline">T</a>
+                    <a href="browse.html" class="hover:underline">U</a>
+                    <a href="browse.html" class="hover:underline">V</a>
+                    <a href="browse.html" class="hover:underline">W</a>
+                    <a href="browse.html" class="hover:underline">X</a>
+                    <a href="browse.html" class="hover:underline">Y</a>
+                    <a href="browse.html" class="hover:underline">Z</a>
+                    <a href="browse.html" class="hover:underline">0-9</a>
                 </div>
             </div>
         </section>
@@ -580,12 +678,12 @@
                 <p class="text-[15px] text-slate-800 leading-relaxed mb-6">Articles published open access are
                     peer-reviewed and made freely available for everyone to read, download and reuse in line with the
                     user license displayed on the article.</p>
-                <p class="text-[15px] text-slate-800 mb-4">View the <a href="#"
+                <p class="text-[15px] text-slate-800 mb-4">View the <a href="browse.html"
                         class="text-[#007398] hover:underline">list of full open access journals and books</a></p>
-                <p class="text-[15px] text-slate-800 mb-4">View all <a href="#"
+                <p class="text-[15px] text-slate-800 mb-4">View all <a href="browse.html"
                         class="text-[#007398] hover:underline">publications with open access articles (includes hybrid
                         journals)</a></p>
-                <p class="text-[15px] text-slate-800 mb-8">Read more about <a href="#"
+                <p class="text-[15px] text-slate-800 mb-8">Read more about <a href="browse.html"
                         class="text-[#007398] hover:underline">Elsevier's open access publishing choices <i
                             class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></p>
             </div>
@@ -597,24 +695,26 @@
                 <div>
                     <h4 class="text-slate-900 text-[18px] font-normal mb-8">About ScienceDirect</h4>
                     <ul class="space-y-3 font-normal">
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Help <i
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Help <i
                                     class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Online video tutorials <i
-                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Privacy principles <i
-                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Accessibility <i
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Online video
+                                tutorials <i class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Privacy principles
+                                <i class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Accessibility <i
                                     class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-slate-900 text-[18px] font-normal mb-8">Explore ScienceDirect</h4>
                     <ul class="space-y-3 font-normal">
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Content syndication on
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Content syndication
+                                on
                                 ScienceDirect</a></li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Create and manage alerts</a>
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Create and manage
+                                alerts</a>
                         </li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Receive personalized
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Receive personalized
                                 recommendations</a></li>
                         <li><a href="browse.html" class="text-[#007398] hover:underline text-[15px]">Browse by topic</a>
                         </li>
@@ -623,13 +723,13 @@
                 <div>
                     <h4 class="text-slate-900 text-[18px] font-normal mb-8">Explore Elsevier</h4>
                     <ul class="space-y-3 font-normal">
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Elsevier Connect <i
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Elsevier Connect <i
                                     class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Publish with Elsevier <i
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Publish with
+                                Elsevier <i class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Scopus <i
                                     class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Scopus <i
-                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
-                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Mendeley <i
+                        <li><a href="index.html" class="text-[#007398] hover:underline text-[15px]">Mendeley <i
                                     class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
                     </ul>
                 </div>
@@ -651,16 +751,16 @@
                     <div class="flex flex-col text-center lg:text-left">
                         <div
                             class="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 mb-3 mt-1 text-[13px] text-slate-900">
-                            <a href="#" class="hover:underline">About ScienceDirect <i
+                            <a href="index.html" class="hover:underline">About ScienceDirect <i
                                     class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
-                            <a href="#" class="hover:underline">Remote access</a>
-                            <a href="#" class="hover:underline">Contact and support <i
+                            <a href="index.html" class="hover:underline">Remote access</a>
+                            <a href="index.html" class="hover:underline">Contact and support <i
                                     class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
-                            <a href="#" class="hover:underline">Terms and conditions <i
+                            <a href="index.html" class="hover:underline">Terms and conditions <i
                                     class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
-                            <a href="#" class="hover:underline">Privacy policy <i
+                            <a href="index.html" class="hover:underline">Privacy policy <i
                                     class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
-                            <a href="#" class="hover:underline">Cookie settings</a>
+                            <a href="index.html" class="hover:underline">Cookie settings</a>
                         </div>
                         <p class="text-slate-500 text-[12px] leading-relaxed max-w-[900px]">
                             All content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors.

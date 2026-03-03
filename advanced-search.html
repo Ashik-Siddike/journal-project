@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Search | ScienceDirect Clone</title>
+    <title>Advanced Search | ScienceDirect</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -12,13 +12,12 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
-<body class="bg-[var(--bg-main)] text-[var(--text-main)] pt-16 font-sans">
+<body class="bg-white text-[var(--text-main)] font-sans min-h-screen flex flex-col pt-[60px]">
 
     <!-- Header -->
     <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[60px] flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
-                <!-- Elsevier tree icon -->
                 <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
                     class="h-10 w-auto object-contain" />
                 <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
@@ -32,7 +31,7 @@
                 <a href="browse.html"
                     class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
                     & Books</a>
-                <a href="#"
+                <a href="index.html"
                     class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
                     <i class="ph ph-question text-lg pb-[2px]"></i> Help
                 </a>
@@ -40,7 +39,6 @@
                     class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
                     <i class="ph ph-user text-lg pb-[2px]"></i> My account
                 </a>
-                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
                 <a href="login.html"
                     class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -57,92 +55,140 @@
                     Sign in
                 </a>
             </nav>
-            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
-                <i class="ph ph-list text-2xl"></i>
-            </button>
         </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-4 py-12">
-        <div class="mb-8">
-            <h1 class="text-3xl font-bold font-outfit text-slate-900 mb-2">Advanced Search</h1>
-            <p class="text-slate-600">Find articles with these search criteria</p>
+    <!-- Main Content -->
+    <main class="flex-grow max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 relative">
+        <h1 class="text-[32px] font-normal text-slate-800 mb-12">Advanced Search</h1>
+
+        <div class="flex flex-col md:flex-row gap-12">
+
+            <!-- Left Sidebar (Tips) -->
+            <div class="md:w-[220px] flex-shrink-0">
+                <a href="index.html"
+                    class="text-[#007398] hover:underline text-[15px] font-medium flex items-center gap-2">
+                    <i class="ph ph-question text-lg"></i>
+                    Search tips
+                </a>
+            </div>
+
+            <!-- Right Form Area -->
+            <div class="flex-grow max-w-[800px]">
+                <form action="search.html" class="space-y-8">
+
+                    <!-- Row 1: Find articles -->
+                    <div>
+                        <label class="block text-[13px] text-slate-600 mb-1">Find articles with these terms</label>
+                        <input type="text"
+                            class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                    </div>
+
+                    <!-- Row 2: Journal/Book Title & Year -->
+                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-6">
+                        <div class="sm:col-span-8">
+                            <label class="block text-[13px] text-slate-600 mb-1">In this journal or book title</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                        </div>
+                        <div class="sm:col-span-4">
+                            <label class="block text-[13px] text-slate-600 mb-1">Year(s)</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Author & Affiliation -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[13px] text-slate-600 mb-1">Author(s)</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] text-slate-600 mb-1">Author affiliation</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Vol, Issue, Page -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-[13px] text-slate-600 mb-1">Volume(s)</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] text-slate-600 mb-1">Issue(s)</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] text-slate-600 mb-1">Page(s)</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-black text-[15px] py-1 focus:outline-none focus:border-[#007398] focus:border-b-2 transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Show all fields toggle -->
+                    <div class="pt-2">
+                        <button type="button"
+                            class="text-[#007398] hover:text-[#004e69] text-[15px] hover:underline font-medium flex items-center gap-2">
+                            <i class="ph ph-caret-down text-lg"></i>
+                            Show all fields
+                        </button>
+                    </div>
+
+                    <!-- Search Button -->
+                    <div class="flex justify-end pt-8">
+                        <button type="submit"
+                            class="bg-[#007398] hover:bg-[#005c7a] text-white px-8 py-2.5 rounded font-medium text-[15px] transition-colors flex items-center gap-2">
+                            <i class="ph ph-magnifying-glass text-lg"></i> Search
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <form class="space-y-6 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-
-            <!-- Find articles with these terms -->
-            <div class="space-y-4">
-                <h3 class="text-lg font-semibold text-slate-800 border-b border-slate-100 pb-2">Terms</h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                    <label class="text-sm font-medium text-slate-700 md:text-right">Find articles with these
-                        terms</label>
-                    <div class="md:col-span-3">
-                        <input type="text" class="input-field" placeholder="e.g. machine learning AND healthcare">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                    <label class="text-sm font-medium text-slate-700 md:text-right">In this journal or book
-                        title</label>
-                    <div class="md:col-span-3 border-l-2 border-slate-200 pl-4">
-                        <input type="text" class="input-field" placeholder="e.g. The Lancet">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                    <label class="text-sm font-medium text-slate-700 md:text-right">Years</label>
-                    <div class="md:col-span-3 border-l-2 border-slate-200 pl-4">
-                        <input type="text" class="input-field" placeholder="e.g. 2024 or 2020-2024">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Author Options -->
-            <div class="space-y-4 pt-4 mt-6">
-                <h3 class="text-lg font-semibold text-slate-800 border-b border-slate-100 pb-2">Authors</h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                    <label class="text-sm font-medium text-slate-700 md:text-right">Author(s)</label>
-                    <div class="md:col-span-3">
-                        <input type="text" class="input-field" placeholder="e.g. J. Smith">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                    <label class="text-sm font-medium text-slate-700 md:text-right">Author affiliation</label>
-                    <div class="md:col-span-3 border-l-2 border-slate-200 pl-4">
-                        <input type="text" class="input-field" placeholder="e.g. Stanford University">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Specific Fields -->
-            <div class="space-y-4 pt-4 mt-6">
-                <h3 class="text-lg font-semibold text-slate-800 border-b border-slate-100 pb-2">Specific fields</h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                    <label class="text-sm font-medium text-slate-700 md:text-right">Title, abstract or author-specified
-                        keywords</label>
-                    <div class="md:col-span-3">
-                        <input type="text" class="input-field">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Actions -->
-            <div class="pt-6 flex items-center justify-end gap-4 border-t border-slate-100 mt-8">
-                <button type="reset" class="text-slate-500 hover:text-slate-800 text-sm font-medium px-4 py-2">Clear
-                    form</button>
-                <button type="submit" class="btn-primary w-full sm:w-auto px-10">Search</button>
-            </div>
-        </form>
+        <!-- Feedback Floating Button -->
+        <button
+            class="fixed bottom-0 right-8 bg-[#007398] hover:bg-[#005c7a] text-white px-4 py-2 rounded-t-md text-[13px] font-medium transition-colors flex items-center gap-2 shadow-lg z-40">
+            <i class="ph ph-chat-teardrop-text text-lg"></i> FEEDBACK
+        </button>
     </main>
 
-    <footer class="bg-[#0b1120] text-slate-400 py-16 px-4 border-t border-slate-800 text-center mt-12">
-        <p>Copyright © 2026 Elsevier B.V.</p>
+    <!-- Auth Footer -->
+    <footer
+        class="bg-white px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t-2 border-[#E9711C] mt-8">
+        <div class="flex flex-col gap-4 max-w-4xl">
+            <!-- Footer Links -->
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] font-medium text-slate-700">
+                <a href="index.html" class="hover:underline">About ScienceDirect</a>
+                <a href="index.html" class="hover:underline">Remote access</a>
+                <a href="index.html" class="hover:underline">Contact and support</a>
+                <a href="index.html" class="hover:underline">Terms and conditions</a>
+                <a href="index.html" class="hover:underline">Privacy policy</a>
+                <a href="index.html" class="hover:underline">Cookie settings</a>
+            </div>
+
+            <p class="text-[12px] text-slate-500">
+                All content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors. All rights
+                are reserved, including those for text and data mining, AI training, and similar technologies. For all
+                open access content, the relevant licensing terms apply.
+            </p>
+
+            <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                class="h-10 w-auto opacity-70 mt-2" />
+        </div>
+
+        <!-- Provider Logos -->
+        <div class="flex items-center gap-6 self-end md:self-auto opacity-70">
+            <span class="text-[28px] font-bold text-[#E9711C] tracking-tighter relative top-[-8px]">RELX<sup
+                    class="text-[10px] top-[-1em]">™</sup></span>
+        </div>
     </footer>
+
 </body>
 
 </html>
