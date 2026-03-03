@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Article | Acta Psychologica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Hide scrollbar for clean look but allow scrolling */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Smooth transitions for wizard steps */
+        .wizard-step {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .wizard-step.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .wizard-step.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stepper UI */
+        .stepper-line {
+            position: absolute;
+            top: 16px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #e2e8f0;
+            z-index: 1;
+        }
+
+        .stepper-progress {
+            position: absolute;
+            top: 16px;
+            left: 0;
+            height: 3px;
+            background-color: #00529A;
+            z-index: 2;
+            transition: width 0.4s ease;
+        }
+
+        .step-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            background: white;
+            border: 3px solid #e2e8f0;
+            color: #94a3b8;
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .step.active .step-circle {
+            border-color: #00529A;
+            color: #00529A;
+        }
+
+        .step.completed .step-circle {
+            border-color: #00529A;
+            background-color: #00529A;
+            color: white;
+        }
+
+        .step.active .step-text {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .step.completed .step-text {
+            color: #00529A;
+            font-weight: 500;
+        }
+
+        /* Interactive Dropzone */
+        .dropzone {
+            transition: all 0.2s ease;
+            border: 2px dashed #cbd5e1;
+        }
+
+        .dropzone.dragover {
+            border-color: #00529A;
+            background-color: #f0f8ff;
+            transform: scale(1.01);
+        }
+
+        .dropzone.has-file {
+            border-style: solid;
+            border-color: #22c55e;
+            background-color: #f0fdf4;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased h-screen overflow-hidden flex flex-col">
+
+    <!-- Minimal Header -->
+    <header class="bg-white border-b border-slate-200 py-3 flex-shrink-0 z-20 shadow-sm relative">
+        <div class="max-w-6xl mx-auto px-6 w-full flex justify-between items-center">
+            <!-- Brand -->
+            <div class="flex items-center gap-3">
+                <img src="./assets/elsevier-non-solus-new-grey.svg" class="h-8 w-auto mix-blend-multiply opacity-80"
+                    alt="Elsevier">
+                <div class="h-6 w-[1px] bg-slate-300 mx-2"></div>
+                <h1 class="text-xl font-bold tracking-tight text-[#003d5c]">Acta Psychologica</h1>
+            </div>
+
+            <!-- User -->
+            <div class="flex items-center gap-4 text-sm font-medium text-slate-600">
+                <div class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded-full bg-blue-100 text-[#00529A] flex items-center justify-center font-bold">
+                        R</div>
+                    <span class="hidden sm:inline">Researchbd</span>
+                </div>
+                <a href="submission-home.html" class="text-slate-400 hover:text-slate-800 transition-colors"
+                    title="Save & Exit">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace (App-like layout) -->
+    <main class="flex-grow flex flex-col items-center pt-6 pb-24 overflow-y-auto relative w-full hide-scrollbar">
+
+        <!-- Wizard Card Container -->
+        <div
+            class="w-full max-w-4xl bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-200 flex flex-col overflow-hidden min-h-[600px] mb-8 relative">
+
+            <!-- Top Stepper Area -->
+            <div class="pt-8 pb-6 px-4 sm:px-10 border-b border-slate-100 bg-white relative z-10 flex-shrink-0">
+                <div class="relative max-w-3xl mx-auto">
+                    <!-- Progress Lines -->
+                    <div class="stepper-line"></div>
+                    <div class="stepper-progress" id="progress-bar" style="width: 0%;"></div>
+
+                    <!-- Steps -->
+                    <div class="flex justify-between relative z-10">
+                        <!-- Step 1 -->
+                        <div class="step active flex flex-col items-center gap-2 w-24" id="nav-step-1">
+                            <div class="step-circle"><i class="ph-bold ph-check hidden check-icon text-lg"></i><span
+                                    class="num">1</span></div>
+                            <span class="step-text text-xs text-slate-500 font-medium text-center">Setup</span>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="step flex flex-col items-center gap-2 w-24" id="nav-step-2">
+                            <div class="step-circle"><i class="ph-bold ph-check hidden check-icon text-lg"></i><span
+                                    class="num">2</span></div>
+                            <span class="step-text text-xs text-slate-500 font-medium text-center">Files</span>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="step flex flex-col items-center gap-2 w-24" id="nav-step-3">
+                            <div class="step-circle"><i class="ph-bold ph-check hidden check-icon text-lg"></i><span
+                                    class="num">3</span></div>
+                            <span class="step-text text-xs text-slate-500 font-medium text-center">Details</span>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="step flex flex-col items-center gap-2 w-24" id="nav-step-4">
+                            <div class="step-circle"><i class="ph-bold ph-check hidden check-icon text-lg"></i><span
+                                    class="num">4</span></div>
+                            <span class="step-text text-xs text-slate-500 font-medium text-center">Review</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Content Area -->
+            <div class="flex-grow overflow-y-auto hide-scrollbar px-6 sm:px-12 py-10" id="wizard-content-area">
+
+                <!-- ==================== STEP 1: SETUP ==================== -->
+                <section id="step-1" class="wizard-step active max-w-2xl mx-auto">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-3 tracking-tight">Let's get started</h2>
+                        <p class="text-slate-500 text-lg">What kind of manuscript are you submitting today?</p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- Article Type Selection -->
+                        <div class="group">
+                            <label for="articleType" class="block text-sm font-semibold text-slate-700 mb-2">Article
+                                Type <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <select id="articleType"
+                                    class="w-full appearance-none bg-white border-2 border-slate-200 rounded-lg pl-4 pr-10 py-3.5 text-slate-800 text-base font-medium focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-[#00529A] transition-all cursor-pointer hover:border-slate-300"
+                                    onchange="validateStep1()">
+                                    <option value="" disabled selected>Select an article type...</option>
+                                    <option value="full">Full Length Article</option>
+                                    <option value="review">Review Article</option>
+                                    <option value="short">Short Communication</option>
+                                    <option value="special">Special Issue Article</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                    <i class="ph-bold ph-caret-down text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ORCID Integration Card -->
+                        <div class="bg-blue-50 border border-blue-100 rounded-lg p-5 flex gap-4 items-start shadow-sm">
+                            <div class="bg-white p-2 rounded-full shadow-sm flex-shrink-0">
+                                <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" class="w-6 h-6"
+                                    alt="ORCID">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 mb-1">Connect your ORCID iD</h4>
+                                <p class="text-sm text-slate-600 mb-3 leading-relaxed">Ensure your ORCID record is
+                                    automatically updated when your manuscript is published. This makes your work vastly
+                                    more discoverable.</p>
+                                <button
+                                    class="text-sm font-bold text-[#00529A] hover:text-[#003d5c] flex items-center gap-1.5 transition-colors group">
+                                    <i class="ph-bold ph-link text-base"></i> Link ORCID profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ==================== STEP 2: UPLOAD ==================== -->
+                <section id="step-2" class="wizard-step hidden max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-3 tracking-tight">Upload your files</h2>
+                        <p class="text-slate-500 text-lg">Please upload your manuscript and any supplementary materials.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-6">
+
+                        <!-- Drag and Drop Zone -->
+                        <div id="dropzone"
+                            class="dropzone bg-slate-50 rounded-xl p-12 text-center relative cursor-pointer group flex flex-col items-center justify-center min-h-[280px]">
+                            <input type="file" id="file-input"
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer text-[0]"
+                                onchange="handleFileUpload(this)">
+
+                            <!-- Initial State -->
+                            <div id="upload-prompt" class="flex flex-col items-center">
+                                <div
+                                    class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-upload-simple text-3xl text-[#00529A]"></i>
+                                </div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-1">Drag and drop your files here</h3>
+                                <p class="text-slate-500 text-sm mb-6">or click to browse your computer</p>
+
+                                <div
+                                    class="bg-white border border-slate-200 px-6 py-2.5 rounded-full font-semibold text-slate-700 shadow-sm text-sm group-hover:border-[#00529A] group-hover:text-[#00529A] transition-colors">
+                                    Browse Files
+                                </div>
+                                <p class="text-xs text-slate-400 mt-4 max-w-xs text-center">PDF, DOCX, or TEX files
+                                    allowed. Max 50MB per file.</p>
+                            </div>
+
+                            <!-- Success State (Hidden initially) -->
+                            <div id="upload-success" class="flex flex-col items-center hidden">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="ph-fill ph-check-circle text-3xl text-green-600"></i>
+                                </div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-1">File uploaded successfully</h3>
+                                <p id="filename-display" class="text-slate-500 text-sm mb-6 font-medium">
+                                    manuscript_draft.pdf (2.4 MB)</p>
+                                <button onclick="resetUpload(event)"
+                                    class="text-sm font-semibold text-red-500 hover:text-red-700 flex items-center gap-1">
+                                    <i class="ph-bold ph-trash"></i> Remove file
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Requirements Checklist -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-5">
+                            <h4 class="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">Required Items
+                            </h4>
+                            <ul class="space-y-2.5 text-sm">
+                                <li class="flex items-center gap-3 text-slate-700">
+                                    <i id="req-manuscript" class="ph-bold ph-circle text-slate-300 text-lg"></i>
+                                    <span>Manuscript (including Title Page & Abstract)</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-700">
+                                    <i class="ph-bold ph-circle text-slate-300 text-lg"></i>
+                                    <span>Declaration of Interest Statement <span
+                                            class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded ml-2">Optional</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ==================== STEP 3: DETAILS ==================== -->
+                <section id="step-3" class="wizard-step hidden max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-3 tracking-tight">Manuscript Details</h2>
+                        <p class="text-slate-500 text-lg">Provide key information to help readers find your work.</p>
+                    </div>
+
+                    <div class="space-y-8">
+
+                        <!-- Title -->
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <label class="block text-sm font-semibold text-slate-700">Full Title <span
+                                        class="text-red-500">*</span></label>
+                            </div>
+                            <textarea id="manuscript-title" rows="2"
+                                class="w-full bg-white border-2 border-slate-200 rounded-lg p-3 text-slate-800 text-base focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-[#00529A] transition-all hover:border-slate-300"
+                                placeholder="Enter the full title of your manuscript..."
+                                oninput="validateStep3()"></textarea>
+                        </div>
+
+                        <!-- Abstract -->
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <label class="block text-sm font-semibold text-slate-700">Abstract <span
+                                        class="text-red-500">*</span></label>
+                                <span class="text-xs text-slate-500"><span id="word-count">0</span> / 250 words</span>
+                            </div>
+                            <textarea id="manuscript-abstract" rows="6"
+                                class="w-full bg-white border-2 border-slate-200 rounded-lg p-3 text-slate-800 text-base focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-[#00529A] transition-all hover:border-slate-300"
+                                placeholder="Copy and paste your abstract here..."
+                                oninput="updateWordCount(this); validateStep3()"></textarea>
+                        </div>
+
+                        <hr class="border-slate-100">
+
+                        <!-- Keywords -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Keywords <span
+                                    class="text-red-500">*</span></label>
+                            <p class="text-sm text-slate-500 mb-3">Add tags to improve discoverability. Press Enter to
+                                add.</p>
+                            <div
+                                class="bg-white border-2 border-slate-200 rounded-lg p-2.5 flex flex-wrap gap-2 items-center focus-within:ring-4 focus-within:ring-blue-500/20 focus-within:border-[#00529A] transition-all hover:border-slate-300">
+                                <div id="keyword-tags" class="flex flex-wrap gap-2">
+                                    <!-- Tags will appear here -->
+                                </div>
+                                <input type="text" id="keyword-input"
+                                    class="flex-grow min-w-[150px] outline-none text-base p-1 text-slate-800 bg-transparent placeholder-slate-400"
+                                    placeholder="Add a keyword..." onkeypress="addKeyword(event)">
+                            </div>
+                        </div>
+
+                        <!-- Authors list -->
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700">Authors</label>
+                                    <p class="text-sm text-slate-500">List all contributing authors in order.</p>
+                                </div>
+                                <button
+                                    class="text-sm font-medium bg-blue-50 text-[#00529A] hover:bg-blue-100 px-3 py-1.5 rounded-md transition-colors flex items-center gap-1">
+                                    <i class="ph-bold ph-plus"></i> Add Author
+                                </button>
+                            </div>
+                            <div
+                                class="border border-slate-200 rounded-lg divide-y divide-slate-100 overflow-hidden shadow-sm">
+                                <!-- Corresponding Author -->
+                                <div class="bg-slate-50 p-4 flex justify-between items-center">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-sm">
+                                            1</div>
+                                        <div>
+                                            <p class="font-bold text-slate-800 text-sm">Researchbd User <span
+                                                    class="text-xs bg-blue-100 text-[#00529A] px-2 py-0.5 rounded ml-2 font-semibold">Corresponding</span>
+                                            </p>
+                                            <p class="text-xs text-slate-500">researchbd@example.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-slate-400">
+                                        <i class="ph-bold ph-dots-three-vertical text-xl cursor-not-allowed"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- ==================== STEP 4: REVIEW ==================== -->
+                <section id="step-4" class="wizard-step hidden max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <div
+                            class="w-20 h-20 bg-[#00529A] text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/30">
+                            <i class="ph-bold ph-paper-plane-tilt text-4xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-slate-900 mb-3 tracking-tight">Almost there!</h2>
+                        <p class="text-slate-500 text-lg">Review your submission details before building the final PDF.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+
+                        <!-- Summary Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Type & Files -->
+                            <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-sm">
+                                <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-2">
+                                    <h4 class="font-bold text-slate-800 flex items-center gap-2"><i
+                                            class="ph-fill ph-check-circle text-green-500 text-lg"></i> Setup & Files
+                                    </h4>
+                                    <button onclick="goToStep(1)"
+                                        class="text-sm text-[#00529A] hover:underline">Edit</button>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex gap-2">
+                                        <span class="text-slate-500 w-24">Type:</span>
+                                        <span class="font-medium text-slate-800" id="summary-type">Full Length
+                                            Article</span>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="text-slate-500 w-24">Manuscript:</span>
+                                        <span class="font-medium text-slate-800 flex items-center gap-1"><i
+                                                class="ph-bold ph-file-pdf text-red-500"></i> Attached</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-sm">
+                                <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-2">
+                                    <h4 class="font-bold text-slate-800 flex items-center gap-2"><i
+                                            class="ph-fill ph-check-circle text-green-500 text-lg"></i> Manuscript Data
+                                    </h4>
+                                    <button onclick="goToStep(3)"
+                                        class="text-sm text-[#00529A] hover:underline">Edit</button>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex gap-2">
+                                        <span class="text-slate-500 w-20 flex-shrink-0">Title:</span>
+                                        <span class="font-medium text-slate-800 truncate" id="summary-title"
+                                            title="Data entered">Data entered</span>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="text-slate-500 w-20 flex-shrink-0">Authors:</span>
+                                        <span class="font-medium text-slate-800">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comments to Editor -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-2">Comments to the Editor <span
+                                    class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded ml-2 font-normal">Optional</span>
+                            </h4>
+                            <p class="text-sm text-slate-500 mb-3">Add any confidential remarks for the editorial
+                                office. These will not be included in the PDF sent to reviewers.</p>
+                            <textarea rows="3"
+                                class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-[#00529A] transition-all"
+                                placeholder="Enter confidential comments here..."></textarea>
+                        </div>
+
+                        <!-- Ethics Checkbox -->
+                        <div class="bg-blue-50 border border-blue-100 rounded-lg p-4">
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox" id="ethics-check"
+                                    class="mt-1 w-5 h-5 rounded border-gray-300 text-[#00529A] focus:ring-[#00529A]"
+                                    onchange="validateStep4()">
+                                <span class="text-sm text-slate-700 leading-snug">
+                                    I confirm that this manuscript has not been published previously, is not under
+                                    consideration for publication elsewhere, and complies with the Acta Psychologica <a
+                                        href="#" class="text-[#00529A] hover:underline font-medium">publishing ethics
+                                        guidelines</a>. <span class="text-red-500 font-bold">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Sticky Bottom Navigation Bar -->
+    <div
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-6 py-4 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center w-full">
+            <!-- Left: Cancel/Exit -->
+            <button onclick="window.location.href='submission-home.html'"
+                class="text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors">
+                Cancel
+            </button>
+
+            <!-- Right: Navigation -->
+            <div class="flex gap-3">
+                <button id="btn-back" onclick="navigate(-1)"
+                    class="hidden px-6 py-2.5 rounded-lg border border-slate-300 text-slate-700 font-semibold hover:bg-slate-50 transition-colors">
+                    Back
+                </button>
+                <button id="btn-next" onclick="navigate(1)"
+                    class="px-8 py-2.5 rounded-lg bg-[#00529A] hover:bg-[#003d5c] text-white font-bold shadow-md shadow-blue-500/20 transition-all flex items-center gap-2 opacity-50 cursor-not-allowed">
+                    Next <i class="ph-bold ph-arrow-right"></i>
+                </button>
+                <button id="btn-submit"
+                    class="hidden px-8 py-2.5 rounded-lg bg-green-600 hover:bg-green-700 text-white font-bold shadow-md shadow-green-500/20 transition-all flex items-center gap-2 opacity-50 cursor-not-allowed"
+                    onclick="alert('Success! PDF is being generated.')">
+                    Build PDF & Submit <i class="ph-bold ph-check-circle"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- WIZARD LOGIC -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        // Element references
+        const btnBack = document.getElementById('btn-back');
+        const btnNext = document.getElementById('btn-next');
+        const btnSubmit = document.getElementById('btn-submit');
+        const progressBar = document.getElementById('progress-bar');
+
+        // --- Navigation Logic ---
+        function navigate(direction) {
+            const nextStep = currentStep + direction;
+            if (nextStep >= 1 && nextStep <= totalSteps) {
+                goToStep(nextStep);
+            }
+        }
+
+        function goToStep(targetStep) {
+            // Hide current step content
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            setTimeout(() => {
+                document.getElementById(`step-${currentStep}`).classList.add('hidden');
+
+                // Update tracker visual state for old step
+                const oldNav = document.getElementById(`nav-step-${currentStep}`);
+                oldNav.classList.remove('active');
+                if (targetStep > currentStep || currentStep > 1) { // Basic logic to mark past steps as done
+                    oldNav.classList.add('completed');
+                    oldNav.querySelector('.check-icon').classList.remove('hidden');
+                    oldNav.querySelector('.num').classList.add('hidden');
+                }
+
+                // Show new step
+                currentStep = targetStep;
+                const newStepEl = document.getElementById(`step-${currentStep}`);
+                newStepEl.classList.remove('hidden');
+                // Tiny delay to allow display block to render before opacity transition
+                setTimeout(() => newStepEl.classList.add('active'), 10);
+
+                // Update tracker visual state for new step
+                const newNav = document.getElementById(`nav-step-${currentStep}`);
+                newNav.classList.remove('completed');
+                newNav.classList.add('active');
+                newNav.querySelector('.check-icon').classList.add('hidden');
+                newNav.querySelector('.num').classList.remove('hidden');
+
+                updateUI();
+
+            }, 300); // match CSS transition time
+        }
+
+        function updateUI() {
+            // Update Progress Bar
+            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            // Toggle Buttons
+            btnBack.classList.toggle('hidden', currentStep === 1);
+
+            if (currentStep === totalSteps) {
+                btnNext.classList.add('hidden');
+                btnSubmit.classList.remove('hidden');
+                validateStep4(); // Check final step validation
+            } else {
+                btnNext.classList.remove('hidden');
+                btnSubmit.classList.add('hidden');
+                // Run specific step validation
+                if (currentStep === 1) validateStep1();
+                if (currentStep === 2) validateStep2();
+                if (currentStep === 3) validateStep3();
+            }
+
+            // Scroll to top of content area
+            document.getElementById('wizard-content-area').scrollTop = 0;
+        }
+
+
+        // --- Validation Logic ---
+
+        function setNextButtonState(isEnabled) {
+            if (isEnabled) {
+                btnNext.classList.remove('opacity-50', 'cursor-not-allowed');
+                btnSubmit.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                btnNext.classList.add('opacity-50', 'cursor-not-allowed');
+                btnSubmit.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // STEP 1 Validation
+        function validateStep1() {
+            const select = document.getElementById('articleType');
+            let isvalid = select.value !== "";
+            setNextButtonState(isvalid);
+
+            if (isvalid) {
+                document.getElementById('summary-type').textContent = select.options[select.selectedIndex].text;
+            }
+        }
+
+        // STEP 2 Validation (Uploads)
+        let fileUploaded = false;
+        function handleFileUpload(input) {
+            if (input.files && input.files.length > 0) {
+                fileUploaded = true;
+                const dropzone = document.getElementById('dropzone');
+                document.getElementById('upload-prompt').classList.add('hidden');
+                document.getElementById('upload-success').classList.remove('hidden');
+
+                dropzone.classList.add('has-file');
+                document.getElementById('req-manuscript').classList.replace('ph-circle', 'ph-check-circle');
+                document.getElementById('req-manuscript').classList.replace('text-slate-300', 'text-green-500');
+
+                document.getElementById('filename-display').textContent = input.files[0].name;
+                validateStep2();
+            }
+        }
+        function resetUpload(e) {
+            e.stopPropagation();
+            fileUploaded = false;
+            document.getElementById('file-input').value = "";
+            const dropzone = document.getElementById('dropzone');
+
+            document.getElementById('upload-success').classList.add('hidden');
+            document.getElementById('upload-prompt').classList.remove('hidden');
+
+            dropzone.classList.remove('has-file');
+            document.getElementById('req-manuscript').classList.replace('ph-check-circle', 'ph-circle');
+            document.getElementById('req-manuscript').classList.replace('text-green-500', 'text-slate-300');
+            validateStep2();
+        }
+        function validateStep2() {
+            setNextButtonState(fileUploaded);
+        }
+
+        // Drag and drop events for UI
+        const dropzone = document.getElementById('dropzone');
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+        });
+        function preventDefaults(e) { e.preventDefault(); e.stopPropagation(); }
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, () => dropzone.classList.add('dragover'), false);
+        });
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, () => dropzone.classList.remove('dragover'), false);
+        });
+        dropzone.addEventListener('drop', handleDrop, false);
+        function handleDrop(e) {
+            let dt = e.dataTransfer;
+            let files = dt.files;
+            document.getElementById('file-input').files = files; // Assign files to input
+            handleFileUpload(document.getElementById('file-input')); // Trigger update
+        }
+
+        // STEP 3 Validation
+        let keywordCount = 0;
+        function updateWordCount(textarea) {
+            const count = textarea.value.trim().split(/\s+/).filter(word => word.length > 0).length;
+            document.getElementById('word-count').textContent = count;
+            if (count > 250) document.getElementById('word-count').classList.add('text-red-500');
+            else document.getElementById('word-count').classList.remove('text-red-500');
+        }
+        function addKeyword(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const input = document.getElementById('keyword-input');
+                const val = input.value.trim();
+                if (val) {
+                    const tag = document.createElement('div');
+                    tag.className = 'bg-blue-100 text-[#00529A] px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5';
+                    tag.innerHTML = `${val} <i class="ph-bold ph-x cursor-pointer hover:text-red-500" onclick="this.parentElement.remove(); window.keywordCount--; validateStep3();"></i>`;
+                    document.getElementById('keyword-tags').appendChild(tag);
+                    input.value = '';
+                    keywordCount++;
+                    validateStep3();
+                }
+            }
+        }
+        function validateStep3() {
+            const title = document.getElementById('manuscript-title').value.trim();
+            const abstract = document.getElementById('manuscript-abstract').value.trim();
+
+            const isValid = title.length > 5 && abstract.length > 10 && keywordCount > 0;
+            setNextButtonState(isValid);
+
+            if (isValid) document.getElementById('summary-title').textContent = title;
+        }
+
+        // STEP 4 Validation
+        function validateStep4() {
+            const checkbox = document.getElementById('ethics-check');
+            setNextButtonState(checkbox.checked);
+        }
+
+    </script>
+</body>
+
+</html>
