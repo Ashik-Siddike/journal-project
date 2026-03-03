@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit New Manuscript - Comments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .em-link {
+            color: #00529A;
+            font-weight: 500;
+        }
+
+        .em-link:hover {
+            text-decoration: underline;
+            color: #003d5c;
+        }
+
+        .em-header {
+            background-color: #003d5c;
+        }
+
+        .tracker-step {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .tracker-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 11px;
+            height: 20px;
+            width: 2px;
+            background-color: #cbd5e1;
+        }
+
+        .tracker-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid;
+            background: white;
+            z-index: 10;
+            margin-right: 12px;
+        }
+
+        .tracker-active .tracker-circle {
+            border-color: #00529A;
+            background-color: #00529A;
+            color: white;
+        }
+
+        .tracker-inactive .tracker-circle {
+            border-color: #cbd5e1;
+            color: transparent;
+        }
+
+        .tracker-error .tracker-circle {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .tracker-done .tracker-circle {
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Top Header -->
+    <header class="em-header text-white">
+        <div class="max-w-[1440px] mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#003d5c] font-bold text-xl leading-none">
+                    em
+                </div>
+                <div>
+                    <h1 class="text-xl font-semibold tracking-wide">Acta Psychologica</h1>
+                    <p class="text-xs text-blue-200">Editorial Manager&reg;</p>
+                </div>
+            </div>
+            <div class="text-sm">
+                <span>Researchbd</span>
+                <span class="mx-2 text-blue-300">|</span>
+                <a href="index.html" class="hover:text-blue-200 hover:underline">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <nav class="bg-[#f8f9fa] border-b border-gray-200 shadow-sm relative z-10">
+        <div class="max-w-[1440px] mx-auto px-4 flex gap-6">
+            <a href="submission-home.html" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">Home</a>
+            <a href="submission-home.html" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">Main
+                Menu</a>
+            <a href="submission-step1.html"
+                class="py-3 text-sm font-semibold border-b-2 border-[#003d5c] text-[#003d5c]">Submit a Manuscript</a>
+            <a href="#" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">About</a>
+            <a href="#" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">Help</a>
+        </div>
+    </nav>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-[1440px] mx-auto px-4 py-8 w-full flex flex-col md:flex-row gap-8">
+
+        <!-- Progress Tracker Sidebar -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <div class="bg-white border border-slate-200 p-5 rounded shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+                <h3 class="font-bold text-slate-700 mb-6 uppercase tracking-wide text-xs">Submission Steps</h3>
+                <div class="space-y-5">
+                    <div class="tracker-step tracker-done group cursor-pointer"
+                        onclick="window.location.href='submission-step1.html'">
+                        <div class="tracker-circle"><i class="ph-bold ph-check text-sm leading-none"></i></div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">Article
+                            Type Selection</span>
+                    </div>
+                    <div class="tracker-step tracker-done group cursor-pointer"
+                        onclick="window.location.href='submission-step2.html'">
+                        <div class="tracker-circle"><i class="ph-bold ph-check text-sm leading-none"></i></div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">Attach
+                            Files</span>
+                    </div>
+                    <div class="tracker-step tracker-error group cursor-pointer" title="Incomplete Step">
+                        <div class="tracker-circle"><i class="ph-bold ph-exclamation-mark text-sm leading-none"></i>
+                        </div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">General
+                            Information</span>
+                    </div>
+                    <div class="tracker-step tracker-error group cursor-pointer" title="Incomplete Step">
+                        <div class="tracker-circle"><i class="ph-bold ph-exclamation-mark text-sm leading-none"></i>
+                        </div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">Additional
+                            Information</span>
+                    </div>
+                    <div class="tracker-step tracker-active">
+                        <div class="tracker-circle"><i class="ph-bold ph-caret-down text-sm"></i></div>
+                        <span class="text-sm font-bold text-[#00529A]">Comments</span>
+                    </div>
+                    <div class="tracker-step tracker-inactive">
+                        <div class="tracker-circle"></div>
+                        <span class="text-sm font-medium text-slate-400">Manuscript Data</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <div class="flex-grow space-y-6 max-w-4xl">
+
+            <h2 class="text-2xl font-bold text-[#003d5c] border-b pb-3">Submit New Manuscript</h2>
+
+            <div class="flex gap-6 items-start">
+                <!-- Empty Left Space to align with other steps if needed -->
+
+                <!-- Right Action Box (Full Width here) -->
+                <div class="w-full space-y-4">
+
+                    <div class="flex justify-end mb-2">
+                        <a href="#"
+                            class="text-[#00529A] text-xs font-semibold hover:underline flex items-center gap-1"><i
+                                class="ph-bold ph-text-aa"></i> Insert Special Character</a>
+                    </div>
+
+                    <!-- Comments Box -->
+                    <div class="bg-white border border-slate-300 shadow-sm">
+                        <div
+                            class="bg-[#003d5c] text-white px-4 py-2 font-bold flex justify-between items-center cursor-pointer">
+                            <span>Enter Comments</span>
+                            <i class="ph-bold ph-minus text-xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 mb-3">Please enter any additional comments you would like
+                                to send to the publication office. These comments will not appear directly in your
+                                submission.</p>
+                            <textarea
+                                class="w-full border border-slate-300 rounded p-3 h-48 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm text-sm"
+                                placeholder="Enter your comments here..."></textarea>
+                        </div>
+                    </div>
+
+
+                    <!-- Navigation Buttons -->
+                    <div class="pt-4 flex justify-between">
+                        <a href="submission-step2.html"
+                            class="px-6 py-2 border border-slate-400 text-slate-600 rounded bg-white hover:bg-slate-50 font-medium">Back</a>
+                        <a href="submission-step4.html" id="proceedBtn"
+                            class="px-6 py-2 bg-[#00529A] text-white rounded font-medium shadow-sm hover:bg-[#003d5c] transition-all">Proceed</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-4 text-center text-xs text-slate-500">
+            <p>Editorial Manager&reg; and ProduXion Manager&reg; from Aries Systems Corporation</p>
+            <div class="mt-2 flex justify-center gap-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

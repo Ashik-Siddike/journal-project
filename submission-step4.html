@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit New Manuscript - Manuscript Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .em-link {
+            color: #00529A;
+            font-weight: 500;
+        }
+
+        .em-link:hover {
+            text-decoration: underline;
+            color: #003d5c;
+        }
+
+        .em-header {
+            background-color: #003d5c;
+        }
+
+        .tracker-step {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .tracker-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 11px;
+            height: 20px;
+            width: 2px;
+            background-color: #cbd5e1;
+        }
+
+        .tracker-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid;
+            background: white;
+            z-index: 10;
+            margin-right: 12px;
+        }
+
+        .tracker-active .tracker-circle {
+            border-color: #00529A;
+            background-color: #00529A;
+            color: white;
+        }
+
+        .tracker-inactive .tracker-circle {
+            border-color: #cbd5e1;
+            color: transparent;
+        }
+
+        .tracker-error .tracker-circle {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .tracker-done .tracker-circle {
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+
+        .accordion-header {
+            background-color: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 12px 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: #334155;
+        }
+
+        .accordion-header.error {
+            background-color: #fee2e2;
+            border-color: #fca5a5;
+            color: #b91c1c;
+        }
+
+        .accordion-body {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Top Header -->
+    <header class="em-header text-white">
+        <div class="max-w-[1440px] mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#003d5c] font-bold text-xl leading-none">
+                    em
+                </div>
+                <div>
+                    <h1 class="text-xl font-semibold tracking-wide">Acta Psychologica</h1>
+                    <p class="text-xs text-blue-200">Editorial Manager&reg;</p>
+                </div>
+            </div>
+            <div class="text-sm">
+                <span>Researchbd</span>
+                <span class="mx-2 text-blue-300">|</span>
+                <a href="index.html" class="hover:text-blue-200 hover:underline">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <nav class="bg-[#f8f9fa] border-b border-gray-200 shadow-sm relative z-10">
+        <div class="max-w-[1440px] mx-auto px-4 flex gap-6">
+            <a href="submission-home.html" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">Home</a>
+            <a href="submission-home.html" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">Main
+                Menu</a>
+            <a href="submission-step1.html"
+                class="py-3 text-sm font-semibold border-b-2 border-[#003d5c] text-[#003d5c]">Submit a Manuscript</a>
+            <a href="#" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">About</a>
+            <a href="#" class="py-3 text-sm font-medium text-slate-600 hover:text-[#003d5c]">Help</a>
+        </div>
+    </nav>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-[1440px] mx-auto px-4 py-8 w-full flex flex-col md:flex-row gap-8">
+
+        <!-- Progress Tracker Sidebar -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <div class="bg-white border border-slate-200 p-5 rounded shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+                <h3 class="font-bold text-slate-700 mb-6 uppercase tracking-wide text-xs">Submission Steps</h3>
+                <div class="space-y-5">
+                    <div class="tracker-step tracker-done group cursor-pointer"
+                        onclick="window.location.href='submission-step1.html'">
+                        <div class="tracker-circle"><i class="ph-bold ph-check text-sm leading-none"></i></div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">Article
+                            Type Selection</span>
+                    </div>
+                    <div class="tracker-step tracker-done group cursor-pointer"
+                        onclick="window.location.href='submission-step2.html'">
+                        <div class="tracker-circle"><i class="ph-bold ph-check text-sm leading-none"></i></div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">Attach
+                            Files</span>
+                    </div>
+                    <div class="tracker-step tracker-error group cursor-pointer" title="Incomplete Step">
+                        <div class="tracker-circle"><i class="ph-bold ph-exclamation-mark text-sm leading-none"></i>
+                        </div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">General
+                            Information</span>
+                    </div>
+                    <div class="tracker-step tracker-error group cursor-pointer" title="Incomplete Step">
+                        <div class="tracker-circle"><i class="ph-bold ph-exclamation-mark text-sm leading-none"></i>
+                        </div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">Additional
+                            Information</span>
+                    </div>
+                    <div class="tracker-step tracker-done group cursor-pointer" title="Comments entered"
+                        onclick="window.location.href='submission-step3.html'">
+                        <div class="tracker-circle"><i class="ph-bold ph-check text-sm leading-none"></i></div>
+                        <span
+                            class="text-sm font-bold text-slate-700 group-hover:text-[#00529A] transition-colors">Comments</span>
+                    </div>
+                    <div class="tracker-step tracker-active">
+                        <div class="tracker-circle"><i class="ph-bold ph-caret-down text-sm"></i></div>
+                        <span class="text-sm font-bold text-[#00529A]">Manuscript Data</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <div class="flex-grow space-y-6 max-w-4xl">
+
+            <h2 class="text-2xl font-bold text-[#003d5c] border-b pb-3">Submit New Manuscript</h2>
+
+            <div class="flex gap-6 items-start">
+
+                <!-- Full Width Action Box for Accordions -->
+                <div class="w-full space-y-4">
+
+                    <div
+                        class="bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800 rounded mb-4 flex gap-3">
+                        <i class="ph-fill ph-warning-circle text-xl text-yellow-500 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong>Please note:</strong> Some required data is missing. Please expand the highlighted
+                            sections below and provide the missing information. Fields marked with a <span
+                                class="text-red-500 font-bold">*</span> are required.
+                        </div>
+                    </div>
+
+                    <!-- Accordion Container -->
+                    <div class="bg-white border border-slate-300 shadow-sm">
+                        <div class="bg-[#003d5c] text-white px-4 py-2 font-bold flex justify-between items-center">
+                            <span>Manuscript Data</span>
+                        </div>
+
+                        <!-- Title Accordion (Missing Data) -->
+                        <div class="accordion-header error" onclick="toggleAccordion('acc-title')">
+                            <span class="flex items-center gap-2"><i class="ph-bold ph-warning text-red-600"></i> Title
+                                <span class="text-red-600">*</span></span>
+                            <i class="ph-bold ph-caret-down"></i>
+                        </div>
+                        <div class="accordion-body hidden" id="acc-title">
+                            <label class="block text-sm font-bold mb-1">Full Title <span
+                                    class="text-red-500">*</span></label>
+                            <textarea
+                                class="w-full border border-red-300 rounded p-2 focus:ring-red-500 focus:border-red-500 bg-red-50 outline-none h-20 text-sm"></textarea>
+                            <p class="text-red-500 text-xs mt-1 font-medium">Please enter the Full Title.</p>
+                        </div>
+
+                        <!-- Abstract Accordion (Missing Data) -->
+                        <div class="accordion-header error" onclick="toggleAccordion('acc-abstract')">
+                            <span class="flex items-center gap-2"><i class="ph-bold ph-warning text-red-600"></i>
+                                Abstract <span class="text-red-600">*</span></span>
+                            <i class="ph-bold ph-caret-down"></i>
+                        </div>
+                        <div class="accordion-body hidden" id="acc-abstract">
+                            <label class="block text-sm font-bold mb-1">Abstract <span
+                                    class="text-red-500">*</span></label>
+                            <textarea
+                                class="w-full border border-red-300 rounded p-2 focus:ring-red-500 focus:border-red-500 bg-red-50 outline-none h-32 text-sm"></textarea>
+                            <p class="text-red-500 text-xs mt-1 font-medium">Please enter an Abstract.</p>
+                        </div>
+
+                        <!-- Keywords Accordion -->
+                        <div class="accordion-header" onclick="toggleAccordion('acc-keywords')">
+                            <span>Keywords <span class="text-red-500">*</span></span>
+                            <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                        <div class="accordion-body hidden" id="acc-keywords">
+                            <p class="text-sm text-slate-600 mb-2">Please enter keywords separated by semicolons (;).
+                            </p>
+                            <input type="text" class="w-full border border-slate-300 rounded p-2 text-sm"
+                                placeholder="e.g. Psychology; Cognition; Behavior">
+                        </div>
+
+                        <!-- Authors Accordion -->
+                        <div class="accordion-header" onclick="toggleAccordion('acc-authors')">
+                            <span>Authors <span class="text-red-500">*</span></span>
+                            <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                        <div class="accordion-body hidden" id="acc-authors">
+                            <p class="text-sm text-slate-600 mb-2">The corresponding author is automatically added. Add
+                                additional authors if necessary.</p>
+                            <div class="p-3 bg-slate-50 border border-slate-200 rounded text-sm mb-3">
+                                <strong>Researchbd User</strong> (Corresponding Author)
+                            </div>
+                            <button
+                                class="text-[#00529A] text-sm font-medium hover:underline flex items-center gap-1"><i
+                                    class="ph-bold ph-plus"></i> Add Another Author</button>
+                        </div>
+
+                        <!-- Funding Accordion -->
+                        <div class="accordion-header" onclick="toggleAccordion('acc-funding')">
+                            <span>Funding Information</span>
+                            <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                        <div class="accordion-body hidden" id="acc-funding">
+                            <p class="text-sm text-slate-600 mb-2">Did this research receive funding?</p>
+                            <div class="flex gap-4 text-sm mt-3">
+                                <label class="flex items-center gap-2"><input type="radio" name="funding"> Yes</label>
+                                <label class="flex items-center gap-2"><input type="radio" name="funding" checked>
+                                    No</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Navigation Buttons -->
+                    <div class="pt-6 flex justify-between items-center">
+                        <a href="submission-step3.html"
+                            class="px-6 py-2 border border-slate-400 text-slate-600 rounded bg-white hover:bg-slate-50 font-medium tracking-wide">Back</a>
+                        <button
+                            class="px-8 py-3 bg-[#00529A] text-white rounded font-bold shadow hover:bg-[#003d5c] transition-all flex items-center gap-2"
+                            onclick="alert('Please resolve the errors highlighted in red before building the PDF.')">
+                            Build PDF for Approval <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-4 text-center text-xs text-slate-500">
+            <p>Editorial Manager&reg; and ProduXion Manager&reg; from Aries Systems Corporation</p>
+            <div class="mt-2 flex justify-center gap-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(id) {
+            const body = document.getElementById(id);
+            const header = body.previousElementSibling;
+            const icon = header.querySelector('i:last-child');
+
+            if (body.classList.contains('hidden')) {
+                body.classList.remove('hidden');
+                icon.classList.remove('ph-caret-right');
+                icon.classList.add('ph-caret-down');
+            } else {
+                body.classList.add('hidden');
+                icon.classList.remove('ph-caret-down');
+                icon.classList.add('ph-caret-right');
+            }
+        }
+
+        // Open the error accordions by default
+        document.getElementById('acc-title').classList.remove('hidden');
+        document.getElementById('acc-abstract').classList.remove('hidden');
+    </script>
+</body>
+
+</html>

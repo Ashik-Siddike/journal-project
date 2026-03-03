@@ -64,180 +64,311 @@
     </header>
 
     <!-- Journal Masthead -->
-    <div class="bg-[#0b1120] text-white pt-12 pb-0">
-        <div class="max-w-7xl mx-auto px-4">
+    <div class="bg-[#0b1120] text-white pt-8 pb-0 mt-[68px]">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
-            <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8">
-                <a href="browse.html" class="hover:text-white">Journals & Books</a>
+            <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8 font-sans">
+                <a href="browse.html" class="hover:text-white transition-colors">Journals & Books</a>
                 <i class="ph ph-caret-right text-xs"></i>
-                <span class="text-slate-200">Journal of Artificial Intelligence</span>
+                <span class="text-slate-200 font-medium">Acta Psychologica</span>
             </nav>
 
-            <div class="flex flex-col md:flex-row gap-8 items-start pb-12">
-                <!-- Journal Cover Placeholder -> Styled Element -->
+            <div class="flex flex-col md:flex-row gap-8 items-start pb-6 relative">
+                <!-- Journal Cover -->
                 <div
-                    class="w-full md:w-48 flex-shrink-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded shadow-2xl border border-slate-700 h-64 flex flex-col items-center justify-center p-4 text-center">
-                    <div class="w-12 h-12 border-2 border-slate-600 rounded-full mb-3 flex items-center justify-center">
-                        <i class="ph ph-atom text-2xl text-slate-400"></i>
+                    class="w-full md:w-[170px] flex-shrink-0 bg-[#E9711C] p-4 h-[230px] flex flex-col justify-between shadow-xl relative order-2 md:order-1 hidden md:flex border-l-[6px] border-[#9c450b]">
+                    <div class="text-white relative z-10">
+                        <h2 class="font-outfit font-bold text-[22px] leading-tight tracking-tight mt-2">
+                            Acta<br>Psychologica</h2>
                     </div>
-                    <span class="text-white font-bold font-serif leading-tight">Acta<br>Psychologica</span>
+                    <div class="w-full flex justify-center text-white mt-auto relative z-10 mb-2">
+                        <img src="./assets/elsevier-non-solus-new-grey.svg"
+                            class="w-10 h-10 mx-auto brightness-200 contrast-200" alt="Elsevier" />
+                    </div>
+                    <!-- Subtle overlay pattern -->
+                    <div
+                        class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]">
+                    </div>
                 </div>
 
                 <!-- Journal Details -->
-                <div class="flex-grow">
-                    <h1 class="text-3xl md:text-5xl font-bold font-outfit mb-4">Journal of Artificial Intelligence</h1>
-                    <p class="text-lg text-slate-300 mb-6 max-w-3xl leading-relaxed">Publishing peer-reviewed research
-                        on the latest developments in machine learning, neural networks, natural language processing,
-                        and robotics.</p>
+                <div class="flex-grow order-1 md:order-2">
+                    <p
+                        class="text-[13px] font-bold uppercase tracking-wider text-green-400 mb-3 flex items-center gap-1.5">
+                        <i class="ph-fill ph-lock-open text-base"></i> Supports open access</p>
+                    <h1 class="text-4xl md:text-[54px] leading-none font-bold font-outfit mb-5">Acta Psychologica</h1>
+                    <p class="text-[18px] text-slate-300 mb-6 max-w-3xl leading-relaxed">
+                        International Journal of Psychonomics
+                    </p>
 
-                    <div class="flex flex-wrap items-center gap-4 text-sm mb-8">
+                    <div class="flex flex-wrap items-center gap-4 text-sm mb-4">
                         <span class="flex items-center gap-1.5"><i
                                 class="ph-fill ph-check-circle text-green-400 text-lg"></i> Peer-reviewed</span>
-                        <div class="w-1 h-1 rounded-full bg-slate-600 hidden sm:block"></div>
-                        <span>Editor-in-Chief: Dr. Alan Turing Jr.</span>
-                        <div class="w-1 h-1 rounded-full bg-slate-600 hidden sm:block"></div>
-                        <a href="index.html" class="text-blue-400 hover:text-blue-300 hover:underline">View editorial board</a>
+                        <div class="w-1 h-1 rounded-full bg-slate-500 hidden sm:block"></div>
+                        <span class="text-slate-300">Editor-in-Chief: <span
+                                class="text-white font-medium hover:underline cursor-pointer">A. Hasman,
+                                M.D.</span></span>
                     </div>
+
+                    <a href="#"
+                        class="text-[#3684D6] hover:text-[#5B9FE2] hover:underline flex items-center gap-1.5 text-[15px] font-medium mt-2">
+                        View Editorial Board <i class="ph ph-arrow-right"></i>
+                    </a>
                 </div>
 
                 <!-- Metrics Box -->
                 <div
-                    class="w-full md:w-64 bg-slate-800/50 backdrop-blur rounded-xl border border-slate-700 p-5 flex-shrink-0">
-                    <h3 class="font-bold text-slate-200 mb-4 border-b border-slate-700 pb-2">Journal Metrics</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-baseline">
-                            <span class="text-slate-400 text-sm">CiteScore</span>
-                            <span class="text-xl font-bold text-white">12.4</span>
-                        </div>
-                        <div class="flex justify-between items-baseline">
-                            <span class="text-slate-400 text-sm">Impact Factor</span>
-                            <span class="text-xl font-bold text-white">9.8</span>
-                        </div>
-                        <div class="flex justify-between items-baseline">
-                            <span class="text-slate-400 text-sm">Acceptance Rate</span>
-                            <span class="text-xl font-bold text-white">18%</span>
+                    class="w-full md:w-auto flex-shrink-0 order-3 flex flex-row md:flex-col gap-3 overflow-x-auto md:overflow-visible pb-4 md:pb-0 hide-scrollbar mt-2">
+                    <div
+                        class="bg-slate-800/80 rounded block p-3.5 border-l-[3px] border-[#3684D6] min-w-[150px] shadow-sm hover:bg-slate-700/80 transition-colors cursor-pointer group">
+                        <div
+                            class="text-[28px] font-bold text-white leading-none mb-1 group-hover:text-blue-200 transition-colors">
+                            4.2</div>
+                        <div class="text-slate-400 text-[11px] font-bold uppercase tracking-wider">CiteScore</div>
+                    </div>
+                    <div
+                        class="bg-slate-800/80 rounded block p-3.5 border-l-[3px] border-[#E9711C] min-w-[150px] shadow-sm hover:bg-slate-700/80 transition-colors cursor-pointer group">
+                        <div
+                            class="text-[28px] font-bold text-white leading-none mb-1 group-hover:text-orange-200 transition-colors">
+                            2.0</div>
+                        <div class="text-slate-400 text-[11px] font-bold uppercase tracking-wider">Impact Factor</div>
+                    </div>
+                    <div
+                        class="bg-slate-800/80 rounded block p-3.5 border-l-[3px] border-emerald-500 min-w-[150px] shadow-sm hover:bg-slate-700/80 transition-colors cursor-pointer group">
+                        <div
+                            class="text-[28px] font-bold text-white leading-none mb-1 group-hover:text-emerald-200 transition-colors">
+                            11 days</div>
+                        <div class="text-slate-400 text-[11px] font-bold uppercase tracking-wider">Time to 1st decision
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Tab Navigation -->
-            <div class="flex overflow-x-auto hide-scrollbar gap-8 border-b border-slate-700">
-                <button class="whitespace-nowrap pb-4 text-white border-b-2 border-white font-medium text-sm">Articles &
-                    Issues</button>
-                <button
-                    class="whitespace-nowrap pb-4 text-slate-400 hover:text-white transition-colors text-sm">About</button>
-                <button
-                    class="whitespace-nowrap pb-4 text-slate-400 hover:text-white transition-colors text-sm">Publish</button>
+        <!-- Tab Navigation - Full Width Background -->
+        <div class="w-full bg-white text-slate-700 mt-2 shadow-[0_4px_12px_rgba(0,0,0,0.05)] relative z-10">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex overflow-x-auto hide-scrollbar gap-8">
+                    <button
+                        class="whitespace-nowrap py-4 border-b-[3px] border-[#00529A] font-bold text-[#00529A] text-[15px]">Articles
+                        & Issues</button>
+                    <button
+                        class="whitespace-nowrap py-4 border-b-[3px] border-transparent hover:border-slate-300 font-medium text-slate-600 hover:text-slate-900 transition-colors text-[15px]">About</button>
+                    <button
+                        class="whitespace-nowrap py-4 border-b-[3px] border-transparent hover:border-slate-300 font-medium text-slate-600 hover:text-slate-900 transition-colors text-[15px]">Publish</button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="py-12 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+    <main class="py-12 bg-slate-50 min-h-screen">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-10">
 
-            <!-- Articles Content -->
-            <div class="flex-grow">
-                <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-2xl font-bold text-slate-900 font-outfit">Latest Articles</h2>
-                    <a href="issue.html"
-                        class="text-[var(--primary)] font-medium hover:underline flex items-center gap-1 text-sm">View
-                        all issues <i class="ph ph-arrow-right"></i></a>
+            <!-- Articles Content (Left) -->
+            <div class="flex-grow w-full lg:w-[65%] xl:w-[70%]">
+                <h2 class="text-[22px] font-bold text-slate-900 font-outfit mb-6">Latest issues</h2>
+
+                <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden mb-8">
+                    <div class="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50/50">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="ph-fill ph-book-open text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900">Volume 204</h3>
+                                <p class="text-sm text-slate-500">In progress • April 2026</p>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="text-[#00529A] font-medium hover:underline text-sm flex items-center gap-1">View all
+                            issues <i class="ph ph-caret-right text-xs"></i></a>
+                    </div>
                 </div>
 
-                <div class="space-y-4">
-                    <!-- Article Item -->
-                    <article
-                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative">
-                        <div
-                            class="absolute top-6 right-6 flex items-center gap-1 text-xs font-medium text-green-700 bg-green-50 px-2 py-1 rounded">
-                            <i class="ph-fill ph-lock-open"></i> Open access
+                <div class="flex items-center justify-between mb-4 mt-10">
+                    <h2 class="text-[22px] font-bold text-slate-900 font-outfit">Latest articles</h2>
+                    <a href="issue.html"
+                        class="text-[#00529A] font-medium hover:underline flex items-center gap-1 text-sm bg-blue-50 px-3 py-1.5 rounded-full transition-colors hover:bg-blue-100">View
+                        latest articles <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <div
+                    class="space-y-0 bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden divide-y divide-slate-100">
+                    <!-- Article 1 -->
+                    <article class="p-6 group hover:bg-slate-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Research
+                                Article</span>
+                            <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <span
+                                class="text-[11px] font-bold uppercase tracking-wider text-green-700 bg-green-50 px-2 flex items-center gap-1 border border-green-100 rounded leading-5"><i
+                                    class="ph-fill ph-circle text-[8px]"></i> Open access</span>
                         </div>
-                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Research Article
-                        </div>
-                        <h3 class="text-xl font-bold font-outfit text-slate-900 mb-2">
-                            <a href="article.html"
-                                class="hover:text-[var(--primary)] hover:underline transition-all">Deep learning
-                                approaches for autonomous navigation</a>
+                        <h3
+                            class="text-xl font-bold font-outfit text-slate-900 leading-tight mb-2 group-hover:text-[#00529A] transition-colors">
+                            <a href="article.html" class="block">The interplay between emotion and cognitive control: A
+                                review of the literature</a>
                         </h3>
-                        <p class="text-sm text-slate-600 mb-4">Available online 12 October 2025</p>
-                        <div class="text-sm text-slate-800 mb-4">John D. Smith, Emily Chen</div>
-                        <button
-                            class="text-[var(--primary)] font-medium hover:underline text-sm flex items-center gap-1">
-                            <i class="ph ph-file-pdf"></i> Download PDF
-                        </button>
+                        <p class="text-[15px] text-slate-600 mb-3">P. Smith, J. Doe, A. Johnson</p>
+                        <div class="flex flex-wrap items-center gap-4 mt-4">
+                            <button
+                                class="text-slate-600 hover:text-slate-900 text-sm font-medium flex items-center gap-1.5 transition-colors border border-slate-300 rounded px-3 py-1.5 bg-white hover:bg-slate-50 shadow-sm"><i
+                                    class="ph ph-file-pdf text-lg text-red-500"></i> View PDF</button>
+                            <button class="text-[#00529A] hover:underline text-sm font-medium">Abstract</button>
+                        </div>
                     </article>
 
-                    <!-- Article Item -->
-                    <article
-                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative">
-                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Review Article
+                    <!-- Article 2 -->
+                    <article class="p-6 group hover:bg-slate-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Review</span>
+                            <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <span
+                                class="text-[11px] font-bold uppercase tracking-wider text-green-700 bg-green-50 px-2 flex items-center gap-1 border border-green-100 rounded leading-5"><i
+                                    class="ph-fill ph-circle text-[8px]"></i> Open access</span>
                         </div>
-                        <h3 class="text-xl font-bold font-outfit text-slate-900 mb-2">
-                            <a href="article.html" class="hover:text-[var(--primary)] hover:underline transition-all">A
-                                comprehensive survey of Transformer architectures</a>
+                        <h3
+                            class="text-xl font-bold font-outfit text-slate-900 leading-tight mb-2 group-hover:text-[#00529A] transition-colors">
+                            <a href="article.html" class="block">Memory consolidation and sleep: New insights from
+                                behavioral paradigms</a>
                         </h3>
-                        <p class="text-sm text-slate-600 mb-4">Volume 45, September 2025</p>
-                        <div class="text-sm text-slate-800 mb-4">Sarah Connor, Miles Dyson</div>
-                        <div class="flex gap-4">
+                        <p class="text-[15px] text-slate-600 mb-3">L. Martinez, K. Williams</p>
+                        <div class="flex flex-wrap items-center gap-4 mt-4">
                             <button
-                                class="text-slate-500 hover:text-[var(--primary)] text-sm flex items-center gap-1"><i
-                                    class="ph ph-file-text"></i> Abstract</button>
+                                class="text-slate-600 hover:text-slate-900 text-sm font-medium flex items-center gap-1.5 transition-colors border border-slate-300 rounded px-3 py-1.5 bg-white hover:bg-slate-50 shadow-sm"><i
+                                    class="ph ph-file-pdf text-lg text-red-500"></i> View PDF</button>
+                            <button class="text-[#00529A] hover:underline text-sm font-medium">Abstract</button>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="p-6 group hover:bg-slate-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Research
+                                Article</span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold font-outfit text-slate-900 leading-tight mb-2 group-hover:text-[#00529A] transition-colors">
+                            <a href="article.html" class="block">Evaluating attention span in digital environments</a>
+                        </h3>
+                        <p class="text-[15px] text-slate-600 mb-3">T. Robinson, M. Lee</p>
+                        <div class="flex flex-wrap items-center gap-4 mt-4">
                             <button
-                                class="text-[var(--primary)] font-medium hover:underline text-sm flex items-center gap-1">
-                                <i class="ph ph-shopping-cart"></i> Purchase PDF
-                            </button>
+                                class="text-white hover:bg-blue-700 bg-[#00529A] text-sm font-medium flex items-center gap-1.5 transition-colors rounded px-3 py-1.5 shadow-sm"><i
+                                    class="ph ph-shopping-cart text-lg"></i> Purchase PDF</button>
+                            <button class="text-[#00529A] hover:underline text-sm font-medium">Abstract</button>
                         </div>
                     </article>
                 </div>
             </div>
 
-            <!-- Sidebar -->
-            <aside class="w-full lg:w-80 flex-shrink-0 space-y-8">
+            <!-- Sidebar (Right) -->
+            <aside class="w-full lg:w-[35%] xl:w-[30%] flex-shrink-0 space-y-6">
+
                 <!-- Action Card -->
-                <div class="bg-[var(--primary)] rounded-xl p-6 text-white shadow-lg">
-                    <h3 class="font-bold text-lg mb-2">Submit your article</h3>
-                    <p class="text-sm text-white/80 mb-6">Guide for authors and online submission process.</p>
-                    <button
-                        class="w-full bg-white text-[var(--primary)] font-semibold py-3 rounded-lg hover:bg-slate-50 transition-colors shadow-sm">
-                        Submit manuscript
-                    </button>
+                <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden relative">
+                    <div class="h-1.5 w-full bg-[#E9711C]"></div>
+                    <div class="p-6 pt-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-[#E9711C]">
+                                <i class="ph-fill ph-paper-plane-tilt text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-xl text-slate-900 font-outfit">Submit your article</h3>
+                        </div>
+                        <p class="text-[14px] text-slate-600 mb-6 leading-relaxed">Please consult our Guide for authors
+                            before submitting your manuscript online.</p>
+
+                        <div class="space-y-3">
+                            <a href="submission-home.html"
+                                class="flex justify-center items-center w-full bg-[#E9711C] text-white font-bold py-3 px-4 rounded hover:bg-[#c25a13] transition-all shadow-sm group">
+                                Submit your article <i
+                                    class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#"
+                                class="flex justify-center items-center w-full bg-white border-2 border-slate-200 text-slate-700 font-bold py-2.5 px-4 rounded hover:bg-slate-50 hover:border-slate-300 transition-colors">
+                                Guide for authors
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Most Read / Cited -->
-                <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-                    <h3 class="font-bold font-outfit text-lg mb-4 text-slate-900 border-b border-slate-100 pb-2">Most
-                        Read Articles</h3>
-                    <ul class="space-y-4">
-                        <li>
-                            <a href="index.html" class="group text-sm">
-                                <span
-                                    class="text-slate-800 font-medium group-hover:text-[var(--primary)] group-hover:underline transition-colors block mb-1">Transformers
-                                    in Computer Vision: A Survey</span>
-                                <span class="text-xs text-slate-500">Han et al. • 2022</span>
-                            </a>
-                        </li>
-                        <hr class="border-slate-100">
-                        <li>
-                            <a href="index.html" class="group text-sm">
-                                <span
-                                    class="text-slate-800 font-medium group-hover:text-[var(--primary)] group-hover:underline transition-colors block mb-1">State
-                                    of the Art in Large Language Models</span>
-                                <span class="text-xs text-slate-500">Zhao et al. • 2023</span>
-                            </a>
-                        </li>
-                    </ul>
+                <!-- Explore Content Card -->
+                <div class="bg-white rounded-lg shadow-sm border border-slate-200">
+                    <div class="p-5 border-b border-slate-100">
+                        <h3 class="font-bold text-[18px] text-slate-900 font-outfit">About the journal</h3>
+                    </div>
+                    <div class="p-2">
+                        <ul class="flex flex-col">
+                            <li><a href="#"
+                                    class="flex items-center justify-between text-[#00529A] text-[15px] font-medium hover:bg-slate-50 p-3 rounded transition-colors group">Aims
+                                    & scope <i
+                                        class="ph ph-caret-right text-slate-400 group-hover:text-[#00529A]"></i></a>
+                            </li>
+                            <li><a href="#"
+                                    class="flex items-center justify-between text-[#00529A] text-[15px] font-medium hover:bg-slate-50 p-3 rounded transition-colors group">Editorial
+                                    board <i
+                                        class="ph ph-caret-right text-slate-400 group-hover:text-[#00529A]"></i></a>
+                            </li>
+                            <li><a href="#"
+                                    class="flex items-center justify-between text-[#00529A] text-[15px] font-medium hover:bg-slate-50 p-3 rounded transition-colors group">Abstracting
+                                    and indexing <i
+                                        class="ph ph-caret-right text-slate-400 group-hover:text-[#00529A]"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- Read & publish Card -->
+                <div class="bg-white rounded-lg shadow-sm border border-slate-200">
+                    <div class="p-5 border-b border-slate-100">
+                        <h3 class="font-bold text-[18px] text-slate-900 font-outfit">Publishing options</h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start gap-3 mb-4">
+                            <i class="ph-fill ph-lock-open text-green-600 text-xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-[15px] mb-1">Open Access</h4>
+                                <p class="text-[13px] text-slate-600">Articles are freely available to both subscribers
+                                    and the wider public with permitted reuse.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="ph-fill ph-book-bookmark text-slate-500 text-xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-[15px] mb-1">Subscription</h4>
+                                <p class="text-[13px] text-slate-600">Articles are made available to subscribers as well
+                                    as developing countries and patient groups through our access programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </aside>
 
         </div>
     </main>
 
-    <footer class="bg-[#0b1120] text-slate-400 py-16 px-4 border-t border-slate-800 text-center mt-12">
-        <p>Copyright © 2026 Elsevier B.V.</p>
+    <!-- Simple Footer -->
+    <footer class="bg-white text-slate-600 py-10 px-4 border-t border-slate-200 mt-auto">
+        <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-6">
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier" class="h-10 opacity-70">
+                <div class="text-[13px] leading-relaxed">
+                    <p class="font-medium text-slate-800">Copyright © 2026 Elsevier B.V.</p>
+                    <p class="text-slate-500">All content on this site is property of its respective owners.</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] font-medium">
+                <a href="#" class="hover:text-slate-900 hover:underline">About ScienceDirect</a>
+                <a href="#" class="hover:text-slate-900 hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-900 hover:underline">Terms and Conditions</a>
+                <a href="#" class="hover:text-slate-900 hover:underline">Cookies</a>
+            </div>
+        </div>
     </footer>
-
 </body>
 
 </html>
