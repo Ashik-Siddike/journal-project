@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Access | ScienceDirect Clone</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-white text-[var(--text-main)] pt-[68px] font-sans">
+    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                    class="h-10 w-auto object-contain" />
+                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
+                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
+                        class="text-[0.55em] relative -top-2">&reg;</sup>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="browse.html"
+                    class="text-[14px] font-normal text-slate-700 hover:text-slate-900 transition-colors relative top-[1px]">Journals
+                    & Books</a>
+                <a href="help-center.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-question text-lg pb-[2px]"></i> Help
+                </a>
+                <a href="dashboard.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                </a>
+                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <a href="login.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
+                        <path d="M3 21h18"></path>
+                        <path d="M9 8h1"></path>
+                        <path d="M9 12h1"></path>
+                        <path d="M9 16h1"></path>
+                        <path d="M14 8h1"></path>
+                        <path d="M14 12h1"></path>
+                        <path d="M14 16h1"></path>
+                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    Sign in
+                </a>
+            </nav>
+            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-[#0b1120] text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1440px] mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-outfit font-light mb-6">Discover Open Access Research</h1>
+            <p class="text-[18px] text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                ScienceDirect provides unrestricted access to millions of peer-reviewed articles. Explore our extensive
+                collection of full open access journals and books without subscriptions or barriers.
+            </p>
+            <div class="max-w-[600px] mx-auto relative group">
+                <input type="text" placeholder="Search open access articles, journals, and books..."
+                    class="w-full text-slate-800 text-[18px] pl-5 pr-[130px] py-[15px] outline-none border border-transparent shadow hover:border-slate-300 focus:border-[#E9711C] focus:ring-1 focus:ring-[#E9711C] transition-colors rounded-none placeholder-slate-500">
+                <button
+                    class="absolute right-0 top-0 bottom-0 px-8 text-white bg-[#007398] hover:bg-[#005c7a] font-medium text-[15px] transition-colors flex items-center gap-2 group-focus-within:bg-[#E9711C]">
+                    <i class="ph ph-magnifying-glass text-[18px]"></i>
+                    <span class="font-normal font-sans">Search</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Info -->
+    <section class="border-b border-slate-200">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <i class="ph ph-lock-key-open text-5xl text-[#E9711C] mb-4"></i>
+                    <h3 class="text-2xl font-outfit text-slate-800 mb-2">1.8 Million+</h3>
+                    <p class="text-slate-600">Open Access articles available to read right now.</p>
+                </div>
+                <div>
+                    <i class="ph ph-books text-5xl text-[#007398] mb-4"></i>
+                    <h3 class="text-2xl font-outfit text-slate-800 mb-2">800+</h3>
+                    <p class="text-slate-600">Fully open access peer-reviewed journals.</p>
+                </div>
+                <div>
+                    <i class="ph ph-globe-hemisphere-west text-5xl text-[#E9711C] mb-4"></i>
+                    <h3 class="text-2xl font-outfit text-slate-800 mb-2">Global Reach</h3>
+                    <p class="text-slate-600">Impactful research available to everyone, everywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top OA Journals -->
+    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex items-end justify-between mb-8">
+            <h2 class="text-[32px] font-outfit text-slate-800">Featured Open Access Journals</h2>
+            <a href="browse.html"
+                class="text-[15px] text-[#007398] hover:underline flex items-center gap-1 font-medium">Browse all OA <i
+                    class="ph ph-arrow-right"></i></a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Journal Card 1 -->
+            <div class="border border-slate-200 p-6 hover:shadow-lg transition-shadow bg-slate-50 relative group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-[#E9711C]"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <span
+                        class="bg-[#007398] text-white text-[12px] font-bold px-2 py-[2px] rounded-sm uppercase tracking-wider">Open
+                        Access</span>
+                    <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-[#E9711C] transition-colors"></i>
+                </div>
+                <a href="journal.html"
+                    class="block text-[20px] font-outfit text-[#007398] hover:underline mb-2 leading-tight">Acta
+                    Psychologica</a>
+                <p class="text-[14px] text-slate-600 mb-4 line-clamp-2">The international journal of psychology
+                    featuring original research across major psychological disciplines.</p>
+                <div class="flex items-center gap-4 text-[13px] text-slate-500">
+                    <span>CiteScore: <strong class="text-slate-700">4.5</strong></span>
+                    <span>Impact Factor: <strong class="text-slate-700">2.1</strong></span>
+                </div>
+            </div>
+
+            <!-- Journal Card 2 -->
+            <div class="border border-slate-200 p-6 hover:shadow-lg transition-shadow bg-slate-50 relative group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-[#007398]"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <span
+                        class="bg-[#007398] text-white text-[12px] font-bold px-2 py-[2px] rounded-sm uppercase tracking-wider">Open
+                        Access</span>
+                    <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-[#E9711C] transition-colors"></i>
+                </div>
+                <a href="#"
+                    class="block text-[20px] font-outfit text-[#007398] hover:underline mb-2 leading-tight">Heliyon</a>
+                <p class="text-[14px] text-slate-600 mb-4 line-clamp-2">An all-science, open access journal that is part
+                    of the Cell Press family.</p>
+                <div class="flex items-center gap-4 text-[13px] text-slate-500">
+                    <span>CiteScore: <strong class="text-slate-700">6.1</strong></span>
+                    <span>Impact Factor: <strong class="text-slate-700">3.4</strong></span>
+                </div>
+            </div>
+
+            <!-- Journal Card 3 -->
+            <div class="border border-slate-200 p-6 hover:shadow-lg transition-shadow bg-slate-50 relative group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-slate-800"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <span
+                        class="bg-[#007398] text-white text-[12px] font-bold px-2 py-[2px] rounded-sm uppercase tracking-wider">Open
+                        Access</span>
+                    <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-[#E9711C] transition-colors"></i>
+                </div>
+                <a href="#"
+                    class="block text-[20px] font-outfit text-[#007398] hover:underline mb-2 leading-tight">Physics
+                    Letters B</a>
+                <p class="text-[14px] text-slate-600 mb-4 line-clamp-2">Ensuring the rapid publication of important new
+                    results in particle physics, nuclear physics and cosmology.</p>
+                <div class="flex items-center gap-4 text-[13px] text-slate-500">
+                    <span>CiteScore: <strong class="text-slate-700">8.9</strong></span>
+                    <span>Impact Factor: <strong class="text-slate-700">4.3</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAs -->
+    <section class="bg-slate-100 py-16">
+        <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border text-center border-slate-200 p-10 md:p-16 shadow-sm">
+                <h2 class="text-[28px] font-outfit text-slate-800 mb-4">Ready to publish Open Access?</h2>
+                <p class="text-[16px] text-slate-600 mb-8 max-w-2xl mx-auto">Discover the benefits of publishing open
+                    access with Elsevier, learn about article publishing charges (APCs), and see if your institution
+                    covers the costs.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="submission-home.html"
+                        class="bg-[#007398] hover:bg-[#005c7a] text-white px-8 py-3 text-[16px] font-medium transition-colors">Submit
+                        your article</a>
+                    <a href="help-center.html"
+                        class="border-2 border-[#007398] text-[#007398] hover:bg-slate-50 px-8 py-3 text-[16px] font-medium transition-colors">Learn
+                        about APC pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0b1120] text-slate-400 py-16 px-4 border-t border-slate-800 text-center">
+        <div class="max-w-[1440px] mx-auto text-[14px] flex flex-wrap justify-center gap-4 mb-8">
+            <a href="#" class="hover:text-white transition-colors">About ScienceDirect</a>
+            <a href="#" class="hover:text-white transition-colors">Remote access</a>
+            <a href="#" class="hover:text-white transition-colors">Shopping cart</a>
+            <a href="#" class="hover:text-white transition-colors">Advertise</a>
+            <a href="#" class="hover:text-white transition-colors">Contact and support</a>
+            <a href="#" class="hover:text-white transition-colors">Terms and conditions</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy policy</a>
+        </div>
+        <p>Copyright © 2026 Elsevier B.V.</p>
+        <p class="mt-2 text-[12px]">ScienceDirect® is a registered trademark of Elsevier B.V.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center | ScienceDirect Clone</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-[#f5f5f5] text-[var(--text-main)] pt-[68px] font-sans">
+    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                    class="h-10 w-auto object-contain" />
+                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
+                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
+                        class="text-[0.55em] relative -top-2">&reg;</sup>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="browse.html"
+                    class="text-[14px] font-normal text-slate-700 hover:text-slate-900 transition-colors relative top-[1px]">Journals
+                    & Books</a>
+                <a href="help-center.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-900 transition-colors pointer-events-none">
+                    <i class="ph ph-question text-lg pb-[2px] text-[#E9711C]"></i> Help
+                </a>
+                <a href="dashboard.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                </a>
+                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <a href="login.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
+                        <path d="M3 21h18"></path>
+                        <path d="M9 8h1"></path>
+                        <path d="M9 12h1"></path>
+                        <path d="M9 16h1"></path>
+                        <path d="M14 8h1"></path>
+                        <path d="M14 12h1"></path>
+                        <path d="M14 16h1"></path>
+                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    Sign in
+                </a>
+            </nav>
+            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Support Center Hero -->
+    <section class="bg-[#007398] text-white py-16 px-4">
+        <div class="max-w-[1000px] mx-auto text-center">
+            <h1 class="text-4xl font-outfit font-light mb-8">ScienceDirect Support Center</h1>
+
+            <div class="max-w-[700px] mx-auto relative group shadow-lg">
+                <input type="text" placeholder="Search for answers, articles, or topics..."
+                    class="w-full text-slate-800 text-[18px] pl-6 pr-[120px] py-[16px] outline-none border-2 border-transparent focus:border-[#E9711C] transition-colors rounded-none placeholder-slate-500">
+                <button
+                    class="absolute text-[#007398] right-0 top-0 bottom-0 px-6 font-medium text-[15px] transition-colors flex items-center gap-2 hover:bg-slate-100">
+                    <i class="ph ph-magnifying-glass text-[20px]"></i>
+                    <span class="font-normal font-sans">Search</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Support Content -->
+    <main class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row gap-10">
+
+        <!-- Left Sidebar: Topics -->
+        <aside class="w-full md:w-[300px] flex-shrink-0">
+            <h3 class="text-[18px] font-outfit text-slate-800 mb-4 border-b border-slate-300 pb-2">Help Topics</h3>
+            <ul class="space-y-3 text-[15px] text-[#007398]">
+                <li><a href="#" class="hover:underline flex items-center justify-between group">Accessing Content <i
+                            class="ph ph-caret-right text-slate-400 group-hover:text-[#007398]"></i></a></li>
+                <li><a href="#" class="hover:underline flex items-center justify-between group">Authoring & Submitting
+                        <i class="ph ph-caret-right text-slate-400 group-hover:text-[#007398]"></i></a></li>
+                <li><a href="#" class="hover:underline flex items-center justify-between group">Account Settings <i
+                            class="ph ph-caret-right text-slate-400 group-hover:text-[#007398]"></i></a></li>
+                <li><a href="#" class="hover:underline flex items-center justify-between group">Billing & Purchases <i
+                            class="ph ph-caret-right text-slate-400 group-hover:text-[#007398]"></i></a></li>
+                <li><a href="#" class="hover:underline flex items-center justify-between group">Open Access <i
+                            class="ph ph-caret-right text-slate-400 group-hover:text-[#007398]"></i></a></li>
+            </ul>
+
+            <div class="mt-10 bg-white border border-slate-200 p-6">
+                <h3 class="text-[16px] font-outfit text-slate-800 mb-3">Still need help?</h3>
+                <p class="text-[14px] text-slate-600 mb-4">Our support team is available 24/7 to assist you.</p>
+                <a href="#"
+                    class="bg-white border border-[#E9711C] text-[#E9711C] hover:bg-orange-50 w-full text-center block py-2 font-medium transition-colors">Contact
+                    Support</a>
+            </div>
+        </aside>
+
+        <!-- Right Content: FAQs -->
+        <div class="flex-grow">
+            <h2 class="text-[28px] font-outfit text-slate-800 mb-8">Frequently Asked Questions</h2>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-slate-200">
+                    <button
+                        class="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors focus:outline-none"
+                        onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.ph-caret-down').classList.toggle('rotate-180')">
+                        <span class="text-[16px] font-medium text-[#007398] pr-4">How do I submit an article to Acta
+                            Psychologica?</span>
+                        <i class="ph ph-caret-down text-slate-500 transition-transform duration-200"></i>
+                    </button>
+                    <div
+                        class="hidden px-6 pb-6 text-[15px] text-slate-600 leading-relaxed border-t border-slate-100 mt-2 pt-4">
+                        To submit an article, first ensure you have a registered account. Navigate to the Author
+                        Dashboard by clicking "My account" and select "Submit New Manuscript". You will be guided
+                        through our 4-step submission wizard where you can upload your files, enter manuscript details,
+                        and review your submission before final approval.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-slate-200">
+                    <button
+                        class="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors focus:outline-none"
+                        onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.ph-caret-down').classList.toggle('rotate-180')">
+                        <span class="text-[16px] font-medium text-[#007398] pr-4">Why can't I access the full-text PDF
+                            of an article?</span>
+                        <i class="ph ph-caret-down text-slate-500 transition-transform duration-200"></i>
+                    </button>
+                    <div
+                        class="hidden px-6 pb-6 text-[15px] text-slate-600 leading-relaxed border-t border-slate-100 mt-2 pt-4">
+                        Full-text access requires either purchasing the individual article, having a personal
+                        subscription, or accessing through an institution that has a subscription. If the article is
+                        marked as "Open Access", it should be freely available. If you believe you should have access
+                        via your university, please try using the <a href="institutional-login.html"
+                            class="text-[#007398] hover:underline">Institutional Login</a> page.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-slate-200">
+                    <button
+                        class="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors focus:outline-none"
+                        onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.ph-caret-down').classList.toggle('rotate-180')">
+                        <span class="text-[16px] font-medium text-[#007398] pr-4">What file formats are accepted for
+                            manuscript submission?</span>
+                        <i class="ph ph-caret-down text-slate-500 transition-transform duration-200"></i>
+                    </button>
+                    <div
+                        class="hidden px-6 pb-6 text-[15px] text-slate-600 leading-relaxed border-t border-slate-100 mt-2 pt-4">
+                        Our submission system accepts primary manuscript files in DOC, DOCX, and PDF formats. For
+                        figures and images, we recommend high-resolution EPS, TIFF, or JPEG files. Additional
+                        supplementary data can be uploaded in various formats including XLS and CSV.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border border-slate-200">
+                    <button
+                        class="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors focus:outline-none"
+                        onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.ph-caret-down').classList.toggle('rotate-180')">
+                        <span class="text-[16px] font-medium text-[#007398] pr-4">How do I reset my password?</span>
+                        <i class="ph ph-caret-down text-slate-500 transition-transform duration-200"></i>
+                    </button>
+                    <div
+                        class="hidden px-6 pb-6 text-[15px] text-slate-600 leading-relaxed border-t border-slate-100 mt-2 pt-4">
+                        Go to the <a href="login.html" class="text-[#007398] hover:underline">Sign in</a> page and click
+                        on the "Forgotten your password?" link below the login form. Enter the email address associated
+                        with your account, and we will send you instructions on how to reset your password.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0b1120] text-slate-400 py-16 px-4 border-t border-slate-800 text-center mt-12">
+        <div class="max-w-[1440px] mx-auto text-[14px] flex flex-wrap justify-center gap-4 mb-8">
+            <a href="#" class="hover:text-white transition-colors">About ScienceDirect</a>
+            <a href="#" class="hover:text-white transition-colors">Remote access</a>
+            <a href="#" class="hover:text-white transition-colors">Shopping cart</a>
+            <a href="#" class="hover:text-white transition-colors">Advertise</a>
+            <a href="help-center.html" class="text-white hover:text-white transition-colors">Contact and support</a>
+            <a href="#" class="hover:text-white transition-colors">Terms and conditions</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy policy</a>
+        </div>
+        <p>Copyright © 2026 Elsevier B.V.</p>
+        <p class="mt-2 text-[12px]">ScienceDirect® is a registered trademark of Elsevier B.V.</p>
+    </footer>
+
+</body>
+
+</html>
