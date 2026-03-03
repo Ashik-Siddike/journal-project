@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal of Artificial Intelligence | ScienceDirect Clone</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-[var(--bg-main)] text-[var(--text-main)] pt-16 font-sans">
+
+    <!-- Navbar from Index -->
+    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
+                <!-- Elsevier tree icon -->
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                    class="h-10 w-auto object-contain" />
+                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
+                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
+                        class="text-[0.55em] relative -top-2">&reg;</sup>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="browse.html"
+                    class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
+                    & Books</a>
+                <a href="#"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-question text-lg pb-[2px]"></i> Help
+                </a>
+                <a href="dashboard.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                </a>
+                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <a href="login.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
+                        <path d="M3 21h18"></path>
+                        <path d="M9 8h1"></path>
+                        <path d="M9 12h1"></path>
+                        <path d="M9 16h1"></path>
+                        <path d="M14 8h1"></path>
+                        <path d="M14 12h1"></path>
+                        <path d="M14 16h1"></path>
+                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    Sign in
+                </a>
+            </nav>
+            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Journal Masthead -->
+    <div class="bg-[#0b1120] text-white pt-12 pb-0">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8">
+                <a href="browse.html" class="hover:text-white">Journals & Books</a>
+                <i class="ph ph-caret-right text-xs"></i>
+                <span class="text-slate-200">Journal of Artificial Intelligence</span>
+            </nav>
+
+            <div class="flex flex-col md:flex-row gap-8 items-start pb-12">
+                <!-- Journal Cover Placeholder -> Styled Element -->
+                <div
+                    class="w-full md:w-48 flex-shrink-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded shadow-2xl border border-slate-700 h-64 flex flex-col items-center justify-center p-4 text-center">
+                    <div class="w-12 h-12 border-2 border-slate-600 rounded-full mb-3 flex items-center justify-center">
+                        <i class="ph ph-atom text-2xl text-slate-400"></i>
+                    </div>
+                    <span class="text-white font-bold font-serif leading-tight">Acta<br>Psychologica</span>
+                </div>
+
+                <!-- Journal Details -->
+                <div class="flex-grow">
+                    <h1 class="text-3xl md:text-5xl font-bold font-outfit mb-4">Journal of Artificial Intelligence</h1>
+                    <p class="text-lg text-slate-300 mb-6 max-w-3xl leading-relaxed">Publishing peer-reviewed research
+                        on the latest developments in machine learning, neural networks, natural language processing,
+                        and robotics.</p>
+
+                    <div class="flex flex-wrap items-center gap-4 text-sm mb-8">
+                        <span class="flex items-center gap-1.5"><i
+                                class="ph-fill ph-check-circle text-green-400 text-lg"></i> Peer-reviewed</span>
+                        <div class="w-1 h-1 rounded-full bg-slate-600 hidden sm:block"></div>
+                        <span>Editor-in-Chief: Dr. Alan Turing Jr.</span>
+                        <div class="w-1 h-1 rounded-full bg-slate-600 hidden sm:block"></div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline">View editorial board</a>
+                    </div>
+                </div>
+
+                <!-- Metrics Box -->
+                <div
+                    class="w-full md:w-64 bg-slate-800/50 backdrop-blur rounded-xl border border-slate-700 p-5 flex-shrink-0">
+                    <h3 class="font-bold text-slate-200 mb-4 border-b border-slate-700 pb-2">Journal Metrics</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-slate-400 text-sm">CiteScore</span>
+                            <span class="text-xl font-bold text-white">12.4</span>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-slate-400 text-sm">Impact Factor</span>
+                            <span class="text-xl font-bold text-white">9.8</span>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-slate-400 text-sm">Acceptance Rate</span>
+                            <span class="text-xl font-bold text-white">18%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex overflow-x-auto hide-scrollbar gap-8 border-b border-slate-700">
+                <button class="whitespace-nowrap pb-4 text-white border-b-2 border-white font-medium text-sm">Articles &
+                    Issues</button>
+                <button
+                    class="whitespace-nowrap pb-4 text-slate-400 hover:text-white transition-colors text-sm">About</button>
+                <button
+                    class="whitespace-nowrap pb-4 text-slate-400 hover:text-white transition-colors text-sm">Publish</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+
+            <!-- Articles Content -->
+            <div class="flex-grow">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold text-slate-900 font-outfit">Latest Articles</h2>
+                    <a href="issue.html"
+                        class="text-[var(--primary)] font-medium hover:underline flex items-center gap-1 text-sm">View
+                        all issues <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Article Item -->
+                    <article
+                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative">
+                        <div
+                            class="absolute top-6 right-6 flex items-center gap-1 text-xs font-medium text-green-700 bg-green-50 px-2 py-1 rounded">
+                            <i class="ph-fill ph-lock-open"></i> Open access
+                        </div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Research Article
+                        </div>
+                        <h3 class="text-xl font-bold font-outfit text-slate-900 mb-2">
+                            <a href="article.html"
+                                class="hover:text-[var(--primary)] hover:underline transition-all">Deep learning
+                                approaches for autonomous navigation</a>
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-4">Available online 12 October 2025</p>
+                        <div class="text-sm text-slate-800 mb-4">John D. Smith, Emily Chen</div>
+                        <button
+                            class="text-[var(--primary)] font-medium hover:underline text-sm flex items-center gap-1">
+                            <i class="ph ph-file-pdf"></i> Download PDF
+                        </button>
+                    </article>
+
+                    <!-- Article Item -->
+                    <article
+                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative">
+                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Review Article
+                        </div>
+                        <h3 class="text-xl font-bold font-outfit text-slate-900 mb-2">
+                            <a href="article.html" class="hover:text-[var(--primary)] hover:underline transition-all">A
+                                comprehensive survey of Transformer architectures</a>
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-4">Volume 45, September 2025</p>
+                        <div class="text-sm text-slate-800 mb-4">Sarah Connor, Miles Dyson</div>
+                        <div class="flex gap-4">
+                            <button
+                                class="text-slate-500 hover:text-[var(--primary)] text-sm flex items-center gap-1"><i
+                                    class="ph ph-file-text"></i> Abstract</button>
+                            <button
+                                class="text-[var(--primary)] font-medium hover:underline text-sm flex items-center gap-1">
+                                <i class="ph ph-shopping-cart"></i> Purchase PDF
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="w-full lg:w-80 flex-shrink-0 space-y-8">
+                <!-- Action Card -->
+                <div class="bg-[var(--primary)] rounded-xl p-6 text-white shadow-lg">
+                    <h3 class="font-bold text-lg mb-2">Submit your article</h3>
+                    <p class="text-sm text-white/80 mb-6">Guide for authors and online submission process.</p>
+                    <button
+                        class="w-full bg-white text-[var(--primary)] font-semibold py-3 rounded-lg hover:bg-slate-50 transition-colors shadow-sm">
+                        Submit manuscript
+                    </button>
+                </div>
+
+                <!-- Most Read / Cited -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                    <h3 class="font-bold font-outfit text-lg mb-4 text-slate-900 border-b border-slate-100 pb-2">Most
+                        Read Articles</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="group text-sm">
+                                <span
+                                    class="text-slate-800 font-medium group-hover:text-[var(--primary)] group-hover:underline transition-colors block mb-1">Transformers
+                                    in Computer Vision: A Survey</span>
+                                <span class="text-xs text-slate-500">Han et al. • 2022</span>
+                            </a>
+                        </li>
+                        <hr class="border-slate-100">
+                        <li>
+                            <a href="#" class="group text-sm">
+                                <span
+                                    class="text-slate-800 font-medium group-hover:text-[var(--primary)] group-hover:underline transition-colors block mb-1">State
+                                    of the Art in Large Language Models</span>
+                                <span class="text-xs text-slate-500">Zhao et al. • 2023</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="bg-[#0b1120] text-slate-400 py-16 px-4 border-t border-slate-800 text-center mt-12">
+        <p>Copyright © 2026 Elsevier B.V.</p>
+    </footer>
+
+</body>
+
+</html>

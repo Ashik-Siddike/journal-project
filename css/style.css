@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #005A9C;     /* Inspired by ScienceDirect blue but slightly more vibrant */
+    --primary-hover: #00457A;
+    --secondary: #E9711C;   /* ScienceDirect orange punch */
+    --bg-main: #F8FAFC;     /* Slate-50 off-white for main bg to create depth */
+    --bg-surface: #FFFFFF;
+    --text-main: #1E293B;   /* Slate-800 */
+    --text-muted: #64748B;  /* Slate-500 */
+    --border-color: #E2E8F0; /* Slate-200 */
+    --focus-ring: rgba(0, 90, 156, 0.3);
+  }
+
+  body {
+    @apply bg-[var(--bg-main)] text-[var(--text-main)] font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 
+           hover:bg-[var(--primary-hover)] hover:shadow-md active:scale-95 focus:outline-none focus:ring-4 focus:ring-[var(--focus-ring)];
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-[var(--primary)] border border-[var(--primary)] px-6 py-2 rounded-lg font-medium transition-all duration-200 
+           hover:bg-slate-50 hover:shadow-sm active:scale-95 focus:outline-none focus:ring-4 focus:ring-[var(--focus-ring)];
+  }
+
+  .card {
+    @apply bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl shadow-sm transition-shadow duration-300 hover:shadow-md;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-slate-300 bg-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none;
+  }
+  
+  .glass-header {
+    @apply fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[var(--border-color)] transition-all duration-300;
+  }
+}
+
+/* Custom Micro-animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "journal-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./css/style.css -o ./css/output.css --watch",
+    "build": "npx tailwindcss -i ./css/style.css -o ./css/output.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | ScienceDirect Clone</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-[var(--bg-main)] text-[var(--text-main)] pt-16 font-sans">
+
+    <!-- Copy Header from Home -->
+    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
+                <!-- Elsevier tree icon -->
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                    class="h-10 w-auto object-contain" />
+                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
+                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
+                        class="text-[0.55em] relative -top-2">&reg;</sup>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="browse.html"
+                    class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
+                    & Books</a>
+                <a href="#"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-question text-lg pb-[2px]"></i> Help
+                </a>
+                <a href="dashboard.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                </a>
+                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <a href="login.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
+                        <path d="M3 21h18"></path>
+                        <path d="M9 8h1"></path>
+                        <path d="M9 12h1"></path>
+                        <path d="M9 16h1"></path>
+                        <path d="M14 8h1"></path>
+                        <path d="M14 12h1"></path>
+                        <path d="M14 16h1"></path>
+                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    Sign in
+                </a>
+            </nav>
+            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Search Bar Section -->
+    <section class="bg-[#0b1120] py-6 px-4">
+        <div class="max-w-7xl mx-auto">
+            <form class="flex flex-col md:flex-row gap-3">
+                <input type="text" value="artificial intelligence" class="input-field flex-grow text-slate-900 bg-white"
+                    placeholder="Find articles, keywords...">
+                <button type="submit" class="btn-primary flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i class="ph ph-magnifying-glass font-bold"></i> Refine Search
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Main Search Results Layout -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+
+        <!-- Sidebar Filters -->
+        <aside class="w-full lg:w-64 flex-shrink-0">
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 sticky top-24">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                    <h3 class="font-bold font-outfit text-lg">Filters</h3>
+                    <button class="text-sm text-[var(--primary)] hover:underline">Clear all</button>
+                </div>
+
+                <!-- Filter Group: Year -->
+                <div class="mb-6">
+                    <h4
+                        class="font-semibold text-sm text-slate-800 mb-3 flex justify-between items-center cursor-pointer">
+                        Years <i class="ph ph-caret-down text-slate-400"></i>
+                    </h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-[var(--primary)] border-slate-300 rounded focus:ring-[var(--primary)]">
+                            <span class="text-sm text-slate-600 group-hover:text-slate-900">2026 (14,230)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-[var(--primary)] border-slate-300 rounded focus:ring-[var(--primary)]"
+                                checked>
+                            <span class="text-sm text-slate-600 group-hover:text-slate-900">2025 (45,102)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-[var(--primary)] border-slate-300 rounded focus:ring-[var(--primary)]">
+                            <span class="text-sm text-slate-600 group-hover:text-slate-900">2024 (89,301)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Filter Group: Article Type -->
+                <div class="mb-6 border-t border-slate-100 pt-4">
+                    <h4
+                        class="font-semibold text-sm text-slate-800 mb-3 flex justify-between items-center cursor-pointer">
+                        Article type <i class="ph ph-caret-down text-slate-400"></i>
+                    </h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-[var(--primary)] border-slate-300 rounded focus:ring-[var(--primary)]">
+                            <span class="text-sm text-slate-600 group-hover:text-slate-900">Research articles</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-[var(--primary)] border-slate-300 rounded focus:ring-[var(--primary)]">
+                            <span class="text-sm text-slate-600 group-hover:text-slate-900">Review articles</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-[var(--primary)] border-slate-300 rounded focus:ring-[var(--primary)]">
+                            <span class="text-sm text-slate-600 group-hover:text-slate-900">Book chapters</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Filter Group: Open Access -->
+                <div class="border-t border-slate-100 pt-4">
+                    <div class="p-3 bg-green-50 rounded-lg border border-green-100 flex gap-2 items-start">
+                        <input type="checkbox"
+                            class="w-4 h-4 mt-1 text-green-600 border-slate-300 rounded focus:ring-green-600">
+                        <div>
+                            <span class="text-sm font-medium text-slate-800 block">Open access only</span>
+                            <p class="text-xs text-slate-500 mt-1">Read articles for free without subscription</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Results List -->
+        <div class="flex-grow">
+            <!-- Results Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">148,633 results</h2>
+                    <p class="text-sm text-slate-500">for "artificial intelligence"</p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <label class="text-sm text-slate-600">Sort by:</label>
+                    <select
+                        class="border-slate-300 text-sm rounded-lg focus:ring-[var(--primary)] focus:border-[var(--primary)]">
+                        <option>Relevance</option>
+                        <option>Date (newest)</option>
+                        <option>Date (oldest)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Active Filters Bags -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm bg-blue-50 text-blue-700 border border-blue-100">
+                    Year: 2025 <button class="hover:text-blue-900"><i class="ph ph-x"></i></button>
+                </span>
+            </div>
+
+            <!-- result cards -->
+            <div class="space-y-4">
+
+                <!-- Card 1 -->
+                <article
+                    class="card p-6 border-l-4 border-l-[var(--primary)] transition-all hover:bg-slate-50 relative">
+                    <!-- Open Access Badge -->
+                    <div
+                        class="absolute top-6 right-6 flex items-center gap-1 text-xs font-medium text-green-700 bg-green-50 px-2 py-1 rounded">
+                        <i class="ph-fill ph-lock-open"></i> Open access
+                    </div>
+
+                    <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Research Article
+                    </div>
+                    <h3 class="text-xl font-bold font-outfit text-slate-900 mb-2">
+                        <a href="article.html" class="hover:text-[var(--primary)] hover:underline transition-all">The
+                            future of generative artificial intelligence in healthcare</a>
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-3">Journal of Medical AI, Volume 42, October 2025, Pages 112-125
+                    </p>
+                    <p class="text-sm text-slate-700 mb-4 line-clamp-2">
+                        This paper explores the transformative potential of generative AI, particularly large language
+                        models, in diagnostic medicine and patient care workflows...
+                    </p>
+                    <div class="flex items-center justify-between mt-4 text-sm">
+                        <div class="text-slate-500">Sarah J. Connor, Marcus Wright</div>
+                        <div class="flex items-center gap-3">
+                            <button class="text-slate-500 hover:text-[var(--primary)] flex items-center gap-1"><i
+                                    class="ph ph-download-simple"></i> Download PDF</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card p-6 transition-all hover:bg-slate-50">
+                    <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Review Article</div>
+                    <h3 class="text-xl font-bold font-outfit text-slate-900 mb-2">
+                        <a href="article.html"
+                            class="hover:text-[var(--primary)] hover:underline transition-all">Machine learning
+                            algorithms for climate prediction models</a>
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-3">Environmental Data Science, Volume 18, Issue 2, March 2025,
+                        Pages 45-60</p>
+                    <p class="text-sm text-slate-700 mb-4 line-clamp-2">
+                        A comprehensive review of the latest supervised and unsupervised learning techniques applied to
+                        global temperature forecasting and weather pattern anomalies...
+                    </p>
+                    <div class="flex items-center justify-between mt-4 text-sm">
+                        <div class="text-slate-500">Dr. Elena Rostova, Kenneth Williams</div>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button class="text-slate-500 hover:text-[var(--primary)] flex items-center gap-1"><i
+                                    class="ph ph-file-text"></i> Abstract</button>
+                            <button
+                                class="text-[var(--secondary)] font-medium hover:underline flex items-center gap-1"><i
+                                    class="ph ph-shopping-cart"></i> Purchase</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Load More / Pagination -->
+                <div class="mt-8 flex justify-center">
+                    <nav class="flex items-center gap-2">
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 flex items-center justify-center text-slate-400 cursor-not-allowed hidden sm:flex"><i
+                                class="ph ph-caret-left"></i></button>
+                        <button
+                            class="w-10 h-10 rounded-lg bg-[var(--primary)] text-white font-medium flex items-center justify-center shadow-md">1</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-medium flex items-center justify-center">2</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-medium flex items-center justify-center">3</button>
+                        <span class="text-slate-400 hidden sm:block">...</span>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-medium flex items-center justify-center hidden sm:flex">50</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center justify-center"><i
+                                class="ph ph-caret-right"></i></button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component from Home -->
+    <footer class="bg-[#0b1120] text-slate-400 py-16 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div>
+                <span class="text-2xl font-bold font-outfit text-white block mb-6">ScienceDirect</span>
+                <p class="text-sm leading-relaxed mb-6">Empowering knowledge through premium peer-reviewed research.</p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors"><i
+                            class="ph ph-twitter-logo text-lg"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors"><i
+                            class="ph ph-linkedin-logo text-lg"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors"><i
+                            class="ph ph-facebook-logo text-lg"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-6">Solutions</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Researchers</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Institutions</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-6">Resources</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Help</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-6">Legal</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Privacy policy</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

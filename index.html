@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienceDirect Clone | Search and Discover</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    <!-- Custom Icons (Phosphor Icons for a clean, modern look) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-[var(--bg-main)] text-[var(--text-main)] pt-16">
+    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
+                <!-- Elsevier tree icon -->
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                    class="h-10 w-auto object-contain" />
+                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
+                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
+                        class="text-[0.55em] relative -top-2">&reg;</sup>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="browse.html"
+                    class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
+                    & Books</a>
+                <a href="#"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-question text-lg pb-[2px]"></i> Help
+                </a>
+                <a href="dashboard.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                </a>
+                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <a href="login.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
+                        <path d="M3 21h18"></path>
+                        <path d="M9 8h1"></path>
+                        <path d="M9 12h1"></path>
+                        <path d="M9 16h1"></path>
+                        <path d="M14 8h1"></path>
+                        <path d="M14 12h1"></path>
+                        <path d="M14 16h1"></path>
+                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    Sign in
+                </a>
+            </nav>
+            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Search Section -->
+        <section class="bg-white pt-12 pb-6 px-4 sm:px-6 lg:px-8 border-b border-slate-100 z-40 relative">
+            <div class="max-w-[1300px] mx-auto">
+                <div class="mb-6 flex flex-col items-center">
+                    <h1 class="text-2xl text-slate-800 tracking-tight font-normal">Search for peer-reviewed journal
+                        articles and book chapters (including <a href="#"
+                            class="text-[var(--primary)] hover:underline cursor-pointer">open access</a> content)</h1>
+                </div>
+
+                <!-- Search Form -->
+                <form action="search.html" class="flex flex-col lg:flex-row gap-4 lg:gap-3 items-end w-full">
+                    <!-- Keywords -->
+                    <div class="flex-grow w-full lg:w-[33%]">
+                        <label class="block text-xs font-semibold text-slate-800 mb-1 cursor-text">Find articles with
+                            these terms</label>
+                        <input type="text"
+                            class="w-full text-slate-900 border border-slate-400 rounded-none focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)] py-2.5 px-3 bg-white hover:border-slate-500 shadow-sm"
+                            placeholder="">
+                    </div>
+
+                    <!-- Journal/Book title -->
+                    <div class="flex-grow w-full lg:w-[33%]">
+                        <label class="block text-xs font-semibold text-slate-800 mb-1 cursor-text">In this journal or
+                            book title</label>
+                        <input type="text"
+                            class="w-full text-slate-900 border border-slate-400 rounded-none focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)] py-2.5 px-3 bg-white hover:border-slate-500 shadow-sm"
+                            placeholder="">
+                    </div>
+
+                    <!-- Author -->
+                    <div class="flex-grow w-full lg:w-[33%]">
+                        <label class="block text-xs font-semibold text-slate-800 mb-1 cursor-text">Author(s)</label>
+                        <input type="text"
+                            class="w-full text-slate-900 border border-slate-400 rounded-none focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)] py-2.5 px-3 bg-white hover:border-slate-500 shadow-sm"
+                            placeholder="">
+                    </div>
+
+                    <div
+                        class="flex flex-col sm:flex-row items-center sm:items-end flex-shrink-0 gap-4 w-full lg:w-auto leading-none">
+                        <button type="submit"
+                            class="w-full sm:w-auto h-[44px] px-8 bg-[#007398] hover:bg-[#005f7d] text-white font-medium rounded-none transition-colors flex items-center justify-center gap-2">
+                            <i class="ph ph-magnifying-glass text-xl"></i>
+                            <span class="font-bold text-sm tracking-wide">Search</span>
+                        </button>
+                        <a href="advanced-search.html"
+                            class="hidden sm:inline-block text-sm text-[var(--primary)] hover:underline whitespace-nowrap h-[44px] leading-[44px]">Advanced
+                            search</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Banner Feature Section (LeapSpace Clone) -->
+        <section class="max-w-[1440px] mx-auto w-full border-b border-slate-200">
+            <div class="flex flex-col md:flex-row w-full min-h-[380px]">
+                <!-- Left Beige Section (70%) -->
+                <div
+                    class="w-full md:w-[72%] bg-[#EFECE5] py-14 px-8 lg:px-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+
+                    <!-- Text Content -->
+                    <div class="w-full md:w-1/2 z-10">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-4 h-4 bg-[#FF5833]"></div>
+                            <span class="text-slate-800 font-medium text-lg tracking-wide">LeapSpace</span>
+                        </div>
+                        <h2 class="text-4xl lg:text-[44px] font-serif text-slate-900 leading-[1.15] mt-1 mb-8"
+                            style="font-family: Georgia, serif;">The research-grade<br>AI workspace</h2>
+                    </div>
+
+                    <!-- 3D Perspective Images (Placeholder emulation) -->
+                    <div
+                        class="w-full md:w-1/2 h-64 relative flex items-center justify-center z-10 translate-x-4 lg:translate-x-12 perspective-[1000px]">
+                        <!-- Wrapper for 3D group -->
+                        <div class="flex gap-2 transform rotate-y-[-15deg] rotate-x-[5deg]">
+                            <!-- Image Slices -->
+                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-800 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400'); transform: translateZ(20px);">
+                            </div>
+                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-700 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=400'); transform: translateZ(40px);">
+                            </div>
+                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-slate-900 bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400'); transform: translateZ(60px);">
+                            </div>
+                            <div class="w-16 lg:w-20 h-48 lg:h-56 bg-[#001736] bg-cover bg-center shadow-2xl transition-transform hover:scale-105"
+                                style="background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=400'); transform: translateZ(80px);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right White Section (30%) -->
+                <div
+                    class="w-full md:w-[28%] bg-white py-14 px-8 lg:px-12 flex flex-col justify-center border-l border-slate-100">
+                    <p class="text-[15px] font-normal text-slate-800 leading-relaxed max-w-[260px] mb-8">
+                        Transparent, AI-assisted research support in one workspace, helping researchers explore
+                        literature, funding opportunities and ideas with confidence.
+                    </p>
+                    <a href="#"
+                        class="group inline-flex items-center justify-between border border-slate-900 text-slate-900 px-5 py-3 hover:bg-slate-900 hover:text-white transition-colors bg-white font-medium text-sm w-fit gap-6 mb-4">
+                        Discover LeapSpace <i
+                            class="ph ph-arrow-up-right font-bold transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dots Nav Bar -->
+            <div
+                class="w-full border-t border-slate-200 bg-slate-50 py-3 flex justify-center items-center gap-10 text-xs font-medium text-slate-500">
+                <button class="flex flex-col items-center gap-1 text-slate-800 border-b-2 border-slate-800 pb-1">
+                    <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                    LeapSpace
+                </button>
+                <button
+                    class="flex flex-col items-center gap-1 hover:text-slate-800 transition-colors pb-1 border-b-2 border-transparent hover:border-slate-300">
+                    <div class="w-2.5 h-2.5 rounded-full border border-slate-400"></div>
+                    Confidence in research
+                </button>
+            </div>
+        </section>
+
+        <!-- Explore Scientific Section -->
+        <section class="py-16 px-4 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-[32px] font-normal text-slate-800 mb-8 pt-4">Explore scientific, technical, and medical
+                    research on ScienceDirect</h2>
+
+                <!-- Tabs -->
+                <div class="flex flex-wrap gap-8 border-b border-slate-200 mb-10">
+                    <button class="pb-4 text-slate-900 border-b-2 border-slate-900 font-medium text-[17px]">Physical
+                        Sciences and Engineering</button>
+                    <button class="pb-4 text-slate-600 hover:text-slate-900 text-[17px] transition-colors">Life
+                        Sciences</button>
+                    <button class="pb-4 text-slate-600 hover:text-slate-900 text-[17px] transition-colors">Health
+                        Sciences</button>
+                    <button class="pb-4 text-slate-600 hover:text-slate-900 text-[17px] transition-colors">Social
+                        Sciences and Humanities</button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Column 1 -->
+                    <div class="pr-4">
+                        <h3 class="text-[22px] text-slate-800 mb-4 font-normal">Physical Sciences and Engineering</h3>
+                        <p class="text-slate-700 text-[14px] mb-8 leading-relaxed">
+                            From foundational science to new and novel research, discover our large collection of
+                            Physical Sciences and Engineering publications, covering a range of disciplines, from the
+                            theoretical to the applied.
+                        </p>
+                        <h4 class="text-slate-800 mb-4 text-[15px] font-normal">Browse journals and books in:</h4>
+                        <ul class="space-y-3 font-normal">
+                            <li><a href="browse.html?subject=chemical-engineering"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Chemical Engineering</a>
+                            </li>
+                            <li><a href="browse.html?subject=chemistry"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Chemistry</a></li>
+                            <li><a href="browse.html?subject=computer-science"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Computer Science</a></li>
+                            <li><a href="browse.html?subject=earth-planetary"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Earth and Planetary
+                                    Sciences</a></li>
+                            <li><a href="browse.html?subject=energy"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Energy</a></li>
+                            <li><a href="browse.html?subject=engineering"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Engineering</a></li>
+                            <li><a href="browse.html?subject=materials-science"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Materials Science</a></li>
+                            <li><a href="browse.html?subject=mathematics"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Mathematics</a></li>
+                            <li><a href="browse.html?subject=physics-astronomy"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Physics and Astronomy</a>
+                            </li>
+                            <li class="pt-2"><a href="browse.html"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Browse all titles in
+                                    Physical Sciences and Engineering</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Artificial
+                                    intelligence in education: A systematic literature review</a>
+                                <p class="text-xs text-slate-800">Expert Systems with Applications, Volume 252, Part A
+                                </p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">"They
+                                    destroyed my life because I do not feel like a man anymore": An Interpretative
+                                    Phenomenological Analysis of Men's lived experiences of rape victimization</a>
+                                <p class="text-xs text-slate-800">Heliyon, Volume 6, Issue 5</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Artificial
+                                    intelligence (AI) applications for marketing: A literature-based study</a>
+                                <p class="text-xs text-slate-800">International Journal of Intelligent Networks, Volume
+                                    3</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Computational
+                                    and Theoretical Chemistry</a>
+                                <p class="text-xs text-slate-800">Volume 1258</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Alexandria
+                                    Engineering Journal</a>
+                                <p class="text-xs text-slate-800">Volume 139</p>
+                            </article>
+                            <article>
+                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Journal
+                                    of Systems Architecture</a>
+                                <p class="text-xs text-slate-800">Volume 173</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Life Sciences Section -->
+                <div class="border-t border-slate-200 mt-12 pt-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Column 1 -->
+                    <div class="pr-4">
+                        <h3 class="text-[22px] text-slate-800 mb-4 font-normal">Life Sciences</h3>
+                        <p class="text-slate-700 text-[14px] mb-8 leading-relaxed">
+                            From foundational science to new and novel research, discover our large collection of Life
+                            Sciences publications, covering a range of disciplines, from the theoretical to the applied.
+                        </p>
+                        <h4 class="text-slate-800 mb-4 text-[15px] font-normal">Browse journals and books in:</h4>
+                        <ul class="space-y-3 font-normal">
+                            <li><a href="browse.html?subject=agricultural-biological"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Agricultural and
+                                    Biological Sciences</a></li>
+                            <li><a href="browse.html?subject=biochemistry"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Biochemistry, Genetics and
+                                    Molecular Biology</a></li>
+                            <li><a href="browse.html?subject=environmental-science"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Environmental Science</a>
+                            </li>
+                            <li><a href="browse.html?subject=immunology"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Immunology and
+                                    Microbiology</a></li>
+                            <li><a href="browse.html?subject=neuroscience"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Neuroscience</a></li>
+                            <li class="pt-2"><a href="browse.html"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Browse all titles in Life
+                                    Sciences</a></li>
+                        </ul>
+                    </div>
+                    <!-- Column 2 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">The
+                                    syndemic of COVID-19 and the surface...</a>
+                                <p class="text-xs text-slate-800">Public Health, Volume 189</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Upcoming
+                                    Rare Intensity Assessment in Clinical Trials...</a>
+                                <p class="text-xs text-slate-800">The Lancet, Volume 398</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Base
+                                    jumping supervision: lessons learned...</a>
+                                <p class="text-xs text-slate-800">Heliyon, Volume 7, Issue 2</p>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Neurology
+                                    (English Edition)</a>
+                                <p class="text-xs text-slate-800">Volume 145, Issue 2</p>
+                            </article>
+                            <article>
+                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">BBA -
+                                    General Subjects</a>
+                                <p class="text-xs text-slate-800">Volume 1869</p>
+                            </article>
+                            <article>
+                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Virus
+                                    Research</a>
+                                <p class="text-xs text-slate-800">Volume 286</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Sciences Section -->
+                <div class="border-t border-slate-200 mt-12 pt-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Column 1 -->
+                    <div class="pr-4">
+                        <h3 class="text-[22px] text-slate-800 mb-4 font-normal">Health Sciences</h3>
+                        <p class="text-slate-700 text-[14px] mb-8 leading-relaxed">
+                            Discover health and medical developments to stimulate research and improve patient care.
+                            Search our books and journals with originations evidence in life-saving therapies and more.
+                        </p>
+                        <h4 class="text-slate-800 mb-4 text-[15px] font-normal">Browse journals and books in:</h4>
+                        <ul class="space-y-3 font-normal">
+                            <li><a href="browse.html?subject=medicine"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Medicine and Dentistry</a>
+                            </li>
+                            <li><a href="browse.html?subject=nursing"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Nursing and Health
+                                    Professions</a></li>
+                            <li><a href="browse.html?subject=pharmacology"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Pharmacology, Toxicology
+                                    and Pharmaceutical Science</a></li>
+                            <li><a href="browse.html?subject=veterinary"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Veterinary Science and
+                                    Veterinary Medicine</a></li>
+                            <li class="pt-2"><a href="browse.html"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Browse all titles in
+                                    Health Sciences</a></li>
+                        </ul>
+                    </div>
+                    <!-- Column 2 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">The
+                                    syndemic of COVID-19 and the surface...</a>
+                                <p class="text-xs text-slate-800">Public Health, Volume 189</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Pharmacologic
+                                    intervention in advanced Alzheimer's disease...</a>
+                                <p class="text-xs text-slate-800">Cell Reports Medicine, Volume 2, Issue 1</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Upcoming
+                                    Rare Intensity Assessment in Clinical Trials...</a>
+                                <p class="text-xs text-slate-800">The Lancet, Volume 398</p>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">International
+                                    Journal of Cardiology</a>
+                                <p class="text-xs text-slate-800">Volume 315</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">European
+                                    Journal of Pharmaceutical Sciences</a>
+                                <p class="text-xs text-slate-800">Volume 152</p>
+                            </article>
+                            <article>
+                                <a href="#" class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Journal
+                                    of Affective Disorders</a>
+                                <p class="text-xs text-slate-800">Volume 279</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Sciences and Humanities Section -->
+                <div class="border-t border-slate-200 mt-12 pt-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Column 1 -->
+                    <div class="pr-4">
+                        <h3 class="text-[22px] text-slate-800 mb-4 font-normal">Social Sciences and Humanities</h3>
+                        <p class="text-slate-700 text-[14px] mb-8 leading-relaxed">
+                            Discover our large collection of Social Sciences and Humanities journals and books
+                            highlighting historical context, current developments, theories, applications, trends and
+                            more.
+                        </p>
+                        <h4 class="text-slate-800 mb-4 text-[15px] font-normal">Browse journals and books in:</h4>
+                        <ul class="space-y-3 font-normal">
+                            <li><a href="browse.html?subject=arts-humanities"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Arts and Humanities</a>
+                            </li>
+                            <li><a href="browse.html?subject=business-management"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Business, Management and
+                                    Accounting</a></li>
+                            <li><a href="browse.html?subject=decision-sciences"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Decision Sciences</a></li>
+                            <li><a href="browse.html?subject=economics"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Economics, Econometrics
+                                    and Finance</a></li>
+                            <li><a href="browse.html?subject=psychology"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Psychology</a></li>
+                            <li><a href="browse.html?subject=social-sciences"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Social Sciences</a></li>
+                            <li class="pt-2"><a href="browse.html"
+                                    class="text-[var(--primary)] text-[15px] hover:underline">Browse all titles in
+                                    Social Sciences and Humanities</a></li>
+                        </ul>
+                    </div>
+                    <!-- Column 2 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Popular Articles</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Literature
+                                    review as a research methodology: An overview and guidelines</a>
+                                <p class="text-xs text-slate-800">Journal of Business Research, Volume 104</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Teleworking
+                                    in the COVID-19 era: A comparative study of stages and career benefits</a>
+                                <p class="text-xs text-slate-800">Journal of Vocational Behavior, Volume 119</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline leading-snug block mb-1">Artificial
+                                    intelligence in education: A systematic literature review</a>
+                                <p class="text-xs text-slate-800">Expert Systems with Applications, Volume 252, Part A
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div>
+                        <h3 class="text-[20px] text-slate-800 mb-6 font-normal">Recent Publications</h3>
+                        <div class="space-y-8">
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Cognition</a>
+                                <p class="text-xs text-slate-800">Volume 206</p>
+                            </article>
+                            <article>
+                                <a href="#"
+                                    class="text-[var(--primary)] text-[17px] hover:underline block mb-1">Information
+                                    Processing & Management</a>
+                                <p class="text-xs text-slate-800">Volume 58</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A-Z Browse Section -->
+        <section class="py-14 bg-[#F2F6F9] border-b border-white px-4 text-center">
+            <div class="max-w-[1300px] mx-auto flex flex-col md:flex-row items-center justify-center gap-6">
+                <span class="text-[17px] text-slate-800 font-normal">Browse by Publication Title:</span>
+                <div
+                    class="flex flex-wrap justify-center gap-x-[18px] gap-y-2 text-[var(--primary)] font-medium text-[17px]">
+                    <a href="#" class="hover:underline">A</a>
+                    <a href="#" class="hover:underline">B</a>
+                    <a href="#" class="hover:underline">C</a>
+                    <a href="#" class="hover:underline">D</a>
+                    <a href="#" class="hover:underline">E</a>
+                    <a href="#" class="hover:underline">F</a>
+                    <a href="#" class="hover:underline">G</a>
+                    <a href="#" class="hover:underline">H</a>
+                    <a href="#" class="hover:underline">I</a>
+                    <a href="#" class="hover:underline">J</a>
+                    <a href="#" class="hover:underline">K</a>
+                    <a href="#" class="hover:underline">L</a>
+                    <a href="#" class="hover:underline">M</a>
+                    <a href="#" class="hover:underline">N</a>
+                    <a href="#" class="hover:underline">O</a>
+                    <a href="#" class="hover:underline">P</a>
+                    <a href="#" class="hover:underline">Q</a>
+                    <a href="#" class="hover:underline">R</a>
+                    <a href="#" class="hover:underline">S</a>
+                    <a href="#" class="hover:underline">T</a>
+                    <a href="#" class="hover:underline">U</a>
+                    <a href="#" class="hover:underline">V</a>
+                    <a href="#" class="hover:underline">W</a>
+                    <a href="#" class="hover:underline">X</a>
+                    <a href="#" class="hover:underline">Y</a>
+                    <a href="#" class="hover:underline">Z</a>
+                    <a href="#" class="hover:underline">0-9</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="bg-white border-t border-slate-200">
+        <!-- Open Access Highlight -->
+        <div class="bg-[#E9EBEC] py-16 px-4">
+            <div class="max-w-[750px] mx-auto text-left">
+                <h2 class="text-[24px] font-normal text-slate-800 mb-6 font-outfit">3.3 million articles on
+                    ScienceDirect are open access</h2>
+                <p class="text-[15px] text-slate-800 leading-relaxed mb-6">Articles published open access are
+                    peer-reviewed and made freely available for everyone to read, download and reuse in line with the
+                    user license displayed on the article.</p>
+                <p class="text-[15px] text-slate-800 mb-4">View the <a href="#"
+                        class="text-[#007398] hover:underline">list of full open access journals and books</a></p>
+                <p class="text-[15px] text-slate-800 mb-4">View all <a href="#"
+                        class="text-[#007398] hover:underline">publications with open access articles (includes hybrid
+                        journals)</a></p>
+                <p class="text-[15px] text-slate-800 mb-8">Read more about <a href="#"
+                        class="text-[#007398] hover:underline">Elsevier's open access publishing choices <i
+                            class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></p>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="bg-[#F2F6F9] py-14 px-4">
+            <div class="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-slate-900 text-[18px] font-normal mb-8">About ScienceDirect</h4>
+                    <ul class="space-y-3 font-normal">
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Help <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Online video tutorials <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Privacy principles <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Accessibility <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-slate-900 text-[18px] font-normal mb-8">Explore ScienceDirect</h4>
+                    <ul class="space-y-3 font-normal">
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Content syndication on
+                                ScienceDirect</a></li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Create and manage alerts</a>
+                        </li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Receive personalized
+                                recommendations</a></li>
+                        <li><a href="browse.html" class="text-[#007398] hover:underline text-[15px]">Browse by topic</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-slate-900 text-[18px] font-normal mb-8">Explore Elsevier</h4>
+                    <ul class="space-y-3 font-normal">
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Elsevier Connect <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Publish with Elsevier <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Scopus <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                        <li><a href="#" class="text-[#007398] hover:underline text-[15px]">Mendeley <i
+                                    class="ph ph-arrow-up-right font-bold text-xs ml-[2px]"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Utility Bar -->
+        <div class="bg-white px-4 py-8 border-t-[3px] border-[#FF5833]">
+            <div
+                class="max-w-[1300px] mx-auto flex flex-col items-center lg:items-start lg:flex-row justify-between gap-10 relative">
+                <!-- Elsevier Logo -->
+                <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 text-[13px] text-slate-800">
+                    <div class="w-[88px] flex-shrink-0 mt-1">
+                        <!-- Standard Tree Logo SVG approach for Elsevier since external SVGs are tricky -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Elsevier_logo.svg/300px-Elsevier_logo.svg.png"
+                            alt="Elsevier" class="w-full object-contain" />
+                    </div>
+
+                    <div class="flex flex-col text-center lg:text-left">
+                        <div
+                            class="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 mb-3 mt-1 text-[13px] text-slate-900">
+                            <a href="#" class="hover:underline">About ScienceDirect <i
+                                    class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
+                            <a href="#" class="hover:underline">Remote access</a>
+                            <a href="#" class="hover:underline">Contact and support <i
+                                    class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
+                            <a href="#" class="hover:underline">Terms and conditions <i
+                                    class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
+                            <a href="#" class="hover:underline">Privacy policy <i
+                                    class="ph ph-arrow-up-right font-bold text-[10px] ml-1 text-slate-500"></i></a>
+                            <a href="#" class="hover:underline">Cookie settings</a>
+                        </div>
+                        <p class="text-slate-500 text-[12px] leading-relaxed max-w-[900px]">
+                            All content on this site: Copyright © 2026 Elsevier B.V., its licensors, and contributors.
+                            All rights are reserved, including those for text and data mining, AI training, and similar
+                            technologies. For all open access content, the relevant licensing terms apply.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RELX Logo -->
+                <div class="flex-shrink-0 mt-4 lg:mt-0 lg:absolute lg:right-0 lg:top-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/RELX_Group_logo.svg/300px-RELX_Group_logo.svg.png"
+                        alt="RELX Group" class="h-5 opacity-80 transition-all filter hover:grayscale" />
+                </div>
+            </div>
+
+            <!-- Sticky Feedback Button Emulator -->
+            <button
+                class="fixed bottom-0 right-10 bg-[#007398] hover:bg-[#005f7d] text-white px-4 py-2 rounded-t-lg transition-colors shadow-lg font-medium text-[13px] flex items-center gap-2 z-50">
+                <i class="ph ph-chat-centered-text text-lg"></i> FEEDBACK
+            </button>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

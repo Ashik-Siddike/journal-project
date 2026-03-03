@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | ScienceDirect Clone</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-[var(--bg-main)] text-[var(--text-main)] pt-16 font-sans">
+
+    <!-- User Header -->
+    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
+                <!-- Elsevier tree icon -->
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                    class="h-10 w-auto object-contain" />
+                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
+                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
+                        class="text-[0.55em] relative -top-2">&reg;</sup>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="browse.html"
+                    class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
+                    & Books</a>
+                <a href="#"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-question text-lg pb-[2px]"></i> Help
+                </a>
+                <a href="dashboard.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                </a>
+                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <a href="login.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
+                        <path d="M3 21h18"></path>
+                        <path d="M9 8h1"></path>
+                        <path d="M9 12h1"></path>
+                        <path d="M9 16h1"></path>
+                        <path d="M14 8h1"></path>
+                        <path d="M14 12h1"></path>
+                        <path d="M14 16h1"></path>
+                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    Sign in
+                </a>
+            </nav>
+            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Dashboard Container -->
+    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-8">
+
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <nav class="space-y-1">
+                <a href="#"
+                    class="bg-[var(--primary)] text-white group flex items-center px-4 py-3 text-sm font-medium rounded-lg">
+                    <i class="ph ph-user-circle text-xl mr-3"></i> My Profile
+                </a>
+                <a href="#"
+                    class="text-slate-600 hover:bg-slate-50 hover:text-slate-900 group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors">
+                    <i class="ph ph-clock-counter-clockwise text-xl mr-3 text-slate-400 group-hover:text-slate-500"></i>
+                    Reading History
+                </a>
+                <a href="#"
+                    class="text-slate-600 hover:bg-slate-50 hover:text-slate-900 group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors">
+                    <i class="ph ph-bookmark-simple text-xl mr-3 text-slate-400 group-hover:text-slate-500"></i> Saved
+                    Articles
+                </a>
+                <a href="#"
+                    class="text-slate-600 hover:bg-slate-50 hover:text-slate-900 group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors">
+                    <i class="ph ph-bell-ringing text-xl mr-3 text-slate-400 group-hover:text-slate-500"></i> Search
+                    Alerts
+                </a>
+                <a href="#"
+                    class="text-slate-600 hover:bg-slate-50 hover:text-slate-900 group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors">
+                    <i class="ph ph-shopping-cart text-xl mr-3 text-slate-400 group-hover:text-slate-500"></i> Orders &
+                    Purchases
+                </a>
+                <a href="#"
+                    class="text-slate-600 hover:bg-slate-50 hover:text-slate-900 group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors">
+                    <i class="ph ph-gear text-xl mr-3 text-slate-400 group-hover:text-slate-500"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="flex-grow space-y-8 mt-2">
+
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl font-bold font-outfit text-slate-900">Welcome, John</h1>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Stat Card 1 -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
+                    <div
+                        class="w-12 h-12 rounded-full bg-blue-50 text-[var(--primary)] flex items-center justify-center">
+                        <i class="ph-fill ph-book-open-text text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold font-outfit text-slate-900">42</div>
+                        <div class="text-sm font-medium text-slate-500">Articles Read</div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
+                    <div
+                        class="w-12 h-12 rounded-full bg-orange-50 text-[var(--secondary)] flex items-center justify-center">
+                        <i class="ph-fill ph-bookmark-simple text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold font-outfit text-slate-900">12</div>
+                        <div class="text-sm font-medium text-slate-500">Saved Articles</div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
+                        <i class="ph-fill ph-bell-ringing text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold font-outfit text-slate-900">3</div>
+                        <div class="text-sm font-medium text-slate-500">Active Alerts</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Reading Activity -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-6 py-5 border-b border-slate-200 flex items-center justify-between bg-slate-50/50">
+                    <h3 class="text-lg font-bold font-outfit text-slate-900">Recent Reading History</h3>
+                    <a href="#" class="text-sm font-medium text-[var(--primary)] hover:underline">View all</a>
+                </div>
+                <div class="divide-y divide-slate-100">
+                    <!-- History Item -->
+                    <div
+                        class="p-6 hover:bg-slate-50 transition-colors flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-1 block">Read
+                                2 hours ago</span>
+                            <a href="article.html"
+                                class="text-lg font-bold font-outfit text-slate-900 hover:text-[var(--primary)] transition-colors line-clamp-1 block mb-1">
+                                Generative artificial intelligence in healthcare
+                            </a>
+                            <p class="text-sm text-slate-600">Journal of Medical AI, October 2025</p>
+                        </div>
+                        <button class="text-slate-400 hover:text-[var(--primary)] transition-colors p-2"
+                            title="Save article">
+                            <i class="ph ph-bookmark-simple text-xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- History Item -->
+                    <div
+                        class="p-6 hover:bg-slate-50 transition-colors flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-1 block">Read
+                                Yesterday</span>
+                            <a href="article.html"
+                                class="text-lg font-bold font-outfit text-slate-900 hover:text-[var(--primary)] transition-colors line-clamp-1 block mb-1">
+                                Deep learning approaches for autonomous navigation
+                            </a>
+                            <p class="text-sm text-slate-600">Journal of Artificial Intelligence, October 2025</p>
+                        </div>
+                        <button class="text-[var(--primary)] transition-colors p-2" title="Remove from saved">
+                            <i class="ph-fill ph-bookmark-simple text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Subscriptions -->
+            <div
+                class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col sm:flex-row justify-between items-center bg-gradient-to-r from-blue-50 to-white">
+                <div>
+                    <h3 class="text-lg font-bold font-outfit text-slate-900 mb-1">Institutional Access</h3>
+                    <p class="text-sm text-slate-600">You are accessing ScienceDirect via <strong
+                            class="text-slate-800">Stanford University Library</strong></p>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <button class="btn-secondary text-sm">Manage access</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="bg-[#0b1120] text-slate-400 py-8 px-4 border-t border-slate-800 text-center mt-12">
+        <p>Copyright © 2026 Elsevier B.V.</p>
+    </footer>
+
+</body>
+
+</html>

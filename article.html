@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Full Text | ScienceDirect Clone</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-white text-[var(--text-main)] pt-16 font-sans">
+
+    <!-- Navbar from Index -->
+    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
+                <!-- Elsevier tree icon -->
+                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
+                    class="h-10 w-auto object-contain" />
+                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
+                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
+                        class="text-[0.55em] relative -top-2">&reg;</sup>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="browse.html"
+                    class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
+                    & Books</a>
+                <a href="#"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-question text-lg pb-[2px]"></i> Help
+                </a>
+                <a href="dashboard.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                </a>
+                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <a href="login.html"
+                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
+                        <path d="M3 21h18"></path>
+                        <path d="M9 8h1"></path>
+                        <path d="M9 12h1"></path>
+                        <path d="M9 16h1"></path>
+                        <path d="M14 8h1"></path>
+                        <path d="M14 12h1"></path>
+                        <path d="M14 16h1"></path>
+                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    Sign in
+                </a>
+            </nav>
+            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Top Reading Action Bar -->
+    <div class="sticky top-16 z-40 bg-white border-b border-slate-200 py-3 px-4 shadow-sm">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="journal.html"
+                    class="text-sm text-slate-500 hover:text-[var(--primary)] hidden sm:block">Journal of Artificial
+                    Intelligence</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="btn-primary py-1.5 px-4 text-sm flex items-center gap-2">
+                    <i class="ph ph-file-pdf"></i> Download full issue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Article Layout -->
+    <div class="max-w-[1400px] mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8 items-start">
+
+        <!-- Left Sidebar: Outline navigation -->
+        <aside
+            class="hidden lg:block w-64 flex-shrink-0 sticky top-40 bg-[var(--bg-main)] rounded-xl p-5 border border-slate-200 max-h-[calc(100vh-120px)] overflow-y-auto">
+            <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Outline</h4>
+            <nav class="space-y-3 text-sm">
+                <a href="#abstract" class="block text-[var(--primary)] font-medium">Abstract</a>
+                <a href="#keywords" class="block text-slate-600 hover:text-[var(--primary)]">Keywords</a>
+                <a href="#introduction" class="block text-slate-600 hover:text-[var(--primary)]">1. Introduction</a>
+                <a href="#methods" class="block text-slate-600 hover:text-[var(--primary)]">2. Methodology</a>
+                <a href="#results" class="block text-slate-600 hover:text-[var(--primary)]">3. Results</a>
+                <a href="#conclusion" class="block text-slate-600 hover:text-[var(--primary)]">4. Conclusion</a>
+                <a href="#references" class="block text-slate-600 hover:text-[var(--primary)]">References</a>
+            </nav>
+        </aside>
+
+        <!-- Center: Article Content -->
+        <article class="flex-grow max-w-3xl pb-16">
+
+            <!-- Metadata -->
+            <div class="mb-8 border-b border-slate-200 pb-8">
+                <div class="flex items-center gap-2 mb-4 text-sm">
+                    <span
+                        class="text-green-700 bg-green-50 px-2 py-0.5 rounded font-medium border border-green-200">Open
+                        Access</span>
+                    <span class="text-slate-500">Volume 42, October 2025</span>
+                </div>
+
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 font-outfit mb-6 leading-tight">The future of
+                    generative artificial intelligence in healthcare: Navigating the paradigm shift</h1>
+
+                <!-- Authors list -->
+                <div class="text-sm text-slate-700 mb-6 flex flex-wrap gap-x-6 gap-y-2">
+                    <span class="font-medium hover:text-[var(--primary)] cursor-pointer">Sarah J. Connor <sup
+                            class="text-[var(--primary)]">a, b, *</sup></span>
+                    <span class="font-medium hover:text-[var(--primary)] cursor-pointer">Marcus Wright <sup
+                            class="text-[var(--primary)]">a</sup></span>
+                    <span class="font-medium hover:text-[var(--primary)] cursor-pointer">Miles Dyson <sup
+                            class="text-[var(--primary)]">c</sup></span>
+                </div>
+
+                <button class="text-[var(--primary)] text-sm font-medium flex items-center gap-1 hover:underline mb-4">
+                    <i class="ph ph-plus-circle"></i> Show more details
+                </button>
+            </div>
+
+            <!-- Content Blocks -->
+            <div class="prose prose-slate max-w-none text-slate-800 space-y-8">
+
+                <!-- Abstract -->
+                <section id="abstract" class="bg-[var(--bg-main)] p-6 rounded-xl border border-slate-200">
+                    <h2 class="text-2xl font-bold font-outfit mb-4">Abstract</h2>
+                    <p class="mb-4 leading-relaxed">Generative artificial intelligence (AI), particularly large language
+                        models (LLMs), has recently demonstrated remarkable capabilities across various domains. In
+                        healthcare, these technologies offer unprecedented opportunities to revolutionize diagnostic
+                        workflows, patient communication, and medical research. This paper explores the transformative
+                        potential of generative AI, examining both near-term applications and long-term implications for
+                        the healthcare paradigm. We present a comprehensive review of current implementations...</p>
+                </section>
+
+                <!-- Keywords -->
+                <section id="keywords">
+                    <h3 class="text-lg font-bold mb-3">Keywords</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm hover:bg-slate-200 cursor-pointer transition-colors border border-slate-200">Generative
+                            AI</span>
+                        <span
+                            class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm hover:bg-slate-200 cursor-pointer transition-colors border border-slate-200">Healthcare</span>
+                        <span
+                            class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm hover:bg-slate-200 cursor-pointer transition-colors border border-slate-200">Large
+                            Language Models</span>
+                        <span
+                            class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm hover:bg-slate-200 cursor-pointer transition-colors border border-slate-200">Diagnostics</span>
+                    </div>
+                </section>
+
+                <hr class="border-slate-200 my-8">
+
+                <!-- Introduction -->
+                <section id="introduction">
+                    <h2 class="text-2xl font-bold font-outfit mb-4">1. Introduction</h2>
+                    <p class="leading-relaxed mb-4">The intersection of computing and medicine has historically driven
+                        significant advancements in patient care. However, the advent of generative AI represents a
+                        foundational shift from computational tools that merely organize or analyze structured data, to
+                        systems capable of synthesizing novel unstructured information <a href="#ref1"
+                            class="text-[var(--primary)] hover:underline">[1]</a>.</p>
+                    <p class="leading-relaxed">Unlike previous predictive AI models trained for specific, narrow tasks
+                        (e.g., classifying medical images), generative models—particularly those based on the
+                        Transformer architecture <a href="#ref2"
+                            class="text-[var(--primary)] hover:underline">[2]</a>—exhibit zero-shot capabilities that
+                        allow them to perform competently across a wide array of unforeseen healthcare scenarios.</p>
+
+                    <!-- In-content image example -->
+                    <figure class="my-8">
+                        <img src="https://via.placeholder.com/800x400" alt="Figure 1"
+                            class="w-full rounded-xl border border-slate-200 shadow-sm p-2 bg-white">
+                        <figcaption class="text-sm text-slate-600 mt-3 text-center"><strong>Fig. 1.</strong> The
+                            evolution of AI implementations in clinical diagnostic workflows over the last decade.
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <!-- More content as needed... -->
+                <section id="conclusion">
+                    <h2 class="text-2xl font-bold font-outfit mb-4">4. Conclusion</h2>
+                    <p class="leading-relaxed">Generative AI will undoubtedly serve as a critical catalyst in the next
+                        era of medical innovation. While challenges regarding data privacy, algorithmic bias, and
+                        clinical validation remain substantial, the trajectory points toward a synergistic future where
+                        human clinical expertise is augmented by the synthesizing power of large foundational models.
+                    </p>
+                </section>
+
+                <hr class="border-slate-200 my-8">
+
+                <!-- References -->
+                <section id="references">
+                    <h2 class="text-2xl font-bold font-outfit mb-4">References</h2>
+                    <ul class="space-y-4 text-sm leading-relaxed text-slate-600">
+                        <li id="ref1">
+                            [1] Topol, E.J. (2019). High-performance medicine: the convergence of human and artificial
+                            intelligence. <em>Nature Medicine</em>, 25(1), 44-56. <a href="#"
+                                class="text-[var(--primary)] hover:underline">https://doi.org/10.1038/s41591-018-0300-7</a>
+                        </li>
+                        <li id="ref2">
+                            [2] Vaswani, A., et al. (2017). Attention is all you need. <em>Advances in neural
+                                information processing systems</em>, 30.
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+
+        <!-- Right Sidebar: Metrics and Recommendations -->
+        <aside class="w-full lg:w-72 flex-shrink-0 space-y-6">
+
+            <!-- Article Metrics -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+                <h3 class="font-bold font-outfit text-slate-900 border-b border-slate-100 pb-3 mb-4">Article Metrics
+                </h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center p-3 bg-slate-50 rounded-lg">
+                        <div class="text-2xl font-bold text-[var(--primary)]">142</div>
+                        <div class="text-xs text-slate-500 uppercase tracking-wide mt-1">Citations</div>
+                    </div>
+                    <div class="text-center p-3 bg-slate-50 rounded-lg">
+                        <div class="text-2xl font-bold text-[var(--primary)]">12k</div>
+                        <div class="text-xs text-slate-500 uppercase tracking-wide mt-1">Views</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommended Articles -->
+            <div class="bg-[var(--bg-main)] rounded-xl border border-slate-200 p-5">
+                <h3 class="font-bold font-outfit text-slate-900 border-b border-slate-200 pb-3 mb-4">Recommended
+                    articles</h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="article.html" class="group block">
+                            <h4
+                                class="text-sm font-medium text-slate-800 group-hover:text-[var(--primary)] transition-colors mb-1 line-clamp-2">
+                                Assessing the bias of Large Language Models in diagnostic protocols</h4>
+                            <p class="text-xs text-slate-500">Journal of Medical Ethics, 2024</p>
+                        </a>
+                    </li>
+                    <hr class="border-slate-200">
+                    <li>
+                        <a href="article.html" class="group block">
+                            <h4
+                                class="text-sm font-medium text-slate-800 group-hover:text-[var(--primary)] transition-colors mb-1 line-clamp-2">
+                                Integration of generative AI in electronic health records</h4>
+                            <p class="text-xs text-slate-500">Healthcare Informatics, 2025</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="bg-[#0b1120] text-slate-400 py-8 px-4 border-t border-slate-800 text-center">
+        <p>Copyright © 2026 Elsevier B.V.</p>
+    </footer>
+
+</body>
+
+</html>
