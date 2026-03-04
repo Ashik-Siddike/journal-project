@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results | ScienceDirect Clone</title>
+    <title>Search Results | JournalHub</title>
     <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,51 +18,43 @@
 
 <body class="bg-[var(--bg-main)] text-[var(--text-main)] pt-16 font-sans">
 
-    <!-- Copy Header from Home -->
-    <header class="bg-white border-b border-slate-200 fixed top-0 w-full z-50">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 relative top-[2px]">
-                <!-- Elsevier tree icon -->
-                <img src="./assets/elsevier-non-solus-new-grey.svg" alt="Elsevier Logo"
-                    class="h-10 w-auto object-contain" />
-                <span class="text-[22px] tracking-tight font-outfit text-[#E9711C]">
-                    <span class="font-bold">Science</span><span class="font-normal">Direct</span><sup
-                        class="text-[0.55em] relative -top-2">&reg;</sup>
+    <!-- Header -->
+    <header
+        class="bg-white/80 backdrop-blur-lg border-b border-slate-200/50 fixed top-0 w-full z-50 transition-all duration-300 shadow-sm">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 relative top-[1px] group">
+                <div
+                    class="h-10 w-10 flex items-center justify-center rounded-lg bg-[#E9711C] text-white shadow-md transition-transform duration-300 group-hover:scale-105">
+                    <i class="ph-bold ph-books text-2xl"></i>
+                </div>
+                <span class="text-[24px] tracking-tight font-outfit text-slate-800">
+                    <span class="font-semibold text-[#E9711C]">Journal</span><span
+                        class="font-normal text-slate-800">Hub</span>
                 </span>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-6">
+            <nav class="hidden md:flex items-center gap-7">
                 <a href="browse.html"
-                    class="text-[14px] font-normal text-slate-800 hover:text-[#E9711C] transition-colors relative top-[1px]">Journals
+                    class="text-[15px] font-medium text-slate-600 hover:text-[#E9711C] transition-colors">Journals
                     & Books</a>
-                <a href="index.html"
-                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
-                    <i class="ph ph-question text-lg pb-[2px]"></i> Help
+                <a href="help-center.html"
+                    class="text-[15px] font-medium flex items-center gap-1.5 text-slate-600 hover:text-[#E9711C] transition-colors">
+                    <i class="ph ph-question text-lg pb-[1px]"></i> Help
                 </a>
                 <a href="dashboard.html"
-                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
-                    <i class="ph ph-user text-lg pb-[2px]"></i> My account
+                    class="text-[15px] font-medium flex items-center gap-1.5 text-slate-600 hover:text-[#E9711C] transition-colors">
+                    <i class="ph ph-user text-lg pb-[1px]"></i> My account
                 </a>
-                <div class="h-5 w-[1px] bg-slate-400 mx-[2px]"></div>
+                <div class="h-5 w-[1px] bg-slate-200"></div>
                 <a href="login.html"
-                    class="text-[14px] font-normal flex items-center gap-[6px] text-slate-700 hover:text-slate-900 transition-colors">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="pb-[2px]">
-                        <path d="M3 21h18"></path>
-                        <path d="M9 8h1"></path>
-                        <path d="M9 12h1"></path>
-                        <path d="M9 16h1"></path>
-                        <path d="M14 8h1"></path>
-                        <path d="M14 12h1"></path>
-                        <path d="M14 16h1"></path>
-                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
-                    </svg>
+                    class="text-[14px] font-semibold flex items-center gap-2 text-[#007398] hover:text-white bg-[#007398]/10 hover:bg-[#007398] px-5 py-2.5 rounded-full transition-all duration-300">
+                    <i class="ph ph-sign-in text-lg"></i>
                     Sign in
                 </a>
             </nav>
-            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
-                <i class="ph ph-list text-2xl"></i>
+            <button onclick="window.location.href='article.html'" class="md:hidden text-slate-600 hover:text-[#E9711C]">
+                <i class="ph ph-list text-3xl"></i>
             </button>
         </div>
     </header>
@@ -70,7 +62,7 @@
     <!-- Search Bar Section -->
     <section class="bg-[#0b1120] py-6 px-4">
         <div class="max-w-7xl mx-auto">
-            <form class="flex flex-col md:flex-row gap-3">
+            <form action="search.html" class="flex flex-col md:flex-row gap-3">
                 <input type="text" value="artificial intelligence" class="input-field flex-grow text-slate-900 bg-white"
                     placeholder="Find articles, keywords...">
                 <button type="submit" class="btn-primary flex items-center justify-center gap-2 whitespace-nowrap">
@@ -211,7 +203,8 @@
                     <div class="flex items-center justify-between mt-4 text-sm">
                         <div class="text-slate-500">Sarah J. Connor, Marcus Wright</div>
                         <div class="flex items-center gap-3">
-                            <button class="text-slate-500 hover:text-[var(--primary)] flex items-center gap-1"><i
+                            <button onclick="window.location.href='article.html'"
+                                class="text-slate-500 hover:text-[var(--primary)] flex items-center gap-1"><i
                                     class="ph ph-download-simple"></i> Download PDF</button>
                         </div>
                     </div>
@@ -267,48 +260,88 @@
         </div>
     </main>
 
-    <!-- Footer Component from Home -->
-    <footer class="bg-[#0b1120] text-slate-400 py-16 px-4 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div>
-                <span class="text-2xl font-bold font-outfit text-white block mb-6">ScienceDirect</span>
-                <p class="text-sm leading-relaxed mb-6">Empowering knowledge through premium peer-reviewed research.</p>
-                <div class="flex gap-4">
-                    <a href="index.html"
-                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors"><i
-                            class="ph ph-twitter-logo text-lg"></i></a>
-                    <a href="index.html"
-                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors"><i
-                            class="ph ph-linkedin-logo text-lg"></i></a>
-                    <a href="index.html"
-                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors"><i
-                            class="ph ph-facebook-logo text-lg"></i></a>
+    <!-- Modern Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 w-full">
+        <!-- Links Grid -->
+        <div class="bg-slate-50 py-20 px-4">
+            <div class="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-slate-900 text-lg font-outfit font-medium mb-6">About JournalHub</h4>
+                    <ul class="space-y-4">
+                        <li><a href="help-center.html"
+                                class="text-slate-500 hover:text-[#007398] transition-colors flex items-center gap-1 group">Help
+                                <i
+                                    class="ph ph-arrow-up-right opacity-0 group-hover:opacity-100 transition-opacity"></i></a>
+                        </li>
+                        <li><a href="javascript:void(0)"
+                                class="text-slate-500 hover:text-[#007398] transition-colors flex items-center gap-1 group">Online
+                                video tutorials <i
+                                    class="ph ph-arrow-up-right opacity-0 group-hover:opacity-100 transition-opacity"></i></a>
+                        </li>
+                        <li><a href="javascript:void(0)"
+                                class="text-slate-500 hover:text-[#007398] transition-colors flex items-center gap-1 group">Privacy
+                                principles <i
+                                    class="ph ph-arrow-up-right opacity-0 group-hover:opacity-100 transition-opacity"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-slate-900 text-lg font-outfit font-medium mb-6">Explore JournalHub</h4>
+                    <ul class="space-y-4">
+                        <li><a href="javascript:void(0)"
+                                class="text-slate-500 hover:text-[#007398] transition-colors">Content syndication</a>
+                        </li>
+                        <li><a href="dashboard.html"
+                                class="text-slate-500 hover:text-[#007398] transition-colors">Create and manage
+                                alerts</a></li>
+                        <li><a href="browse.html" class="text-slate-500 hover:text-[#007398] transition-colors">Browse
+                                by topic</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
 
-            <div>
-                <h4 class="text-white font-semibold mb-6">Solutions</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="article.html" class="hover:text-white transition-colors">Researchers</a></li>
-                    <li><a href="index.html" class="hover:text-white transition-colors">Institutions</a></li>
-                </ul>
+        <!-- Bottom Utility Bar -->
+        <div class="bg-white py-10 px-4 relative w-full">
+            <div class="max-w-[1240px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
+                <!-- Logos & Text -->
+                <div class="flex items-center gap-8 text-[13px] text-slate-500">
+                    <div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+                        <div class="h-10 w-10 bg-slate-400 rounded-lg flex items-center justify-center text-white">
+                            <i class="ph-fill ph-books text-2xl"></i>
+                        </div>
+                        <span
+                            class="text-[20px] tracking-tight font-outfit text-slate-500 font-semibold">JournalHub</span>
+                    </div>
+                    <div class="hidden lg:block w-[1px] h-10 bg-slate-200"></div>
+                    <div>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 mb-3 font-medium">
+                            <a href="javascript:void(0)" class="hover:text-[#007398] transition-colors">About
+                                JournalHub</a>
+                            <a href="javascript:void(0)" class="hover:text-[#007398] transition-colors">Remote
+                                access</a>
+                            <a href="help-center.html" class="hover:text-[#007398] transition-colors">Contact and
+                                support</a>
+                            <a href="javascript:void(0)" class="hover:text-[#007398] transition-colors">Terms and
+                                conditions</a>
+                            <a href="javascript:void(0)" class="hover:text-[#007398] transition-colors">Privacy
+                                policy</a>
+                        </div>
+                        <p class="leading-relaxed">Copyright © 2026 JournalHub. All rights reserved.</p>
+                    </div>
+                </div>
+
+                <!-- RELX -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/RELX_Group_logo.svg/300px-RELX_Group_logo.svg.png"
+                    alt="RELX Group"
+                    class="h-5 opacity-40 hover:opacity-100 hover:grayscale-0 grayscale transition-all duration-300" />
             </div>
 
-            <div>
-                <h4 class="text-white font-semibold mb-6">Resources</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="index.html" class="hover:text-white transition-colors">About</a></li>
-                    <li><a href="index.html" class="hover:text-white transition-colors">Help</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-semibold mb-6">Legal</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="index.html" class="hover:text-white transition-colors">Privacy policy</a></li>
-                    <li><a href="index.html" class="hover:text-white transition-colors">Terms</a></li>
-                </ul>
-            </div>
+            <!-- Sticky Feedback -->
+            <button
+                class="fixed bottom-6 right-6 bg-slate-900 hover:bg-[#E9711C] text-white p-3.5 rounded-full transition-all duration-300 shadow-xl shadow-slate-900/20 z-50 group hover:-translate-y-1">
+                <i class="ph ph-chat-centered-text text-xl"></i>
+            </button>
         </div>
     </footer>
 
