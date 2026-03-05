@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle Mobile Menu interactions
-    const mobileMenuBtn = document.querySelector('button.md\\:hidden');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn') || document.querySelector('button.md\\:hidden');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuBtn && mobileMenu) {

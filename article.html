@@ -53,9 +53,21 @@
                     Sign in
                 </a>
             </nav>
-            <button class="md:hidden text-slate-600 hover:text-[#E9711C]">
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 hover:text-[#E9711C]">
                 <i class="ph ph-list text-3xl"></i>
             </button>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-200 shadow-md">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="browse.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-[#E9711C] hover:bg-slate-50">Journals & Books</a>
+                <a href="help-center.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-[#E9711C] hover:bg-slate-50">Help</a>
+                <a href="dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-[#E9711C] hover:bg-slate-50">My account</a>
+                <div class="h-[1px] bg-slate-200 my-2"></div>
+                <a href="submission-wizard.html" class="block px-3 py-2 rounded-md text-base font-medium text-[#E9711C] hover:bg-slate-50">Submit Article</a>
+                <a href="login.html" class="block px-3 py-2 rounded-md text-base font-medium text-[#007398] hover:bg-slate-50">Sign in</a>
+            </div>
         </div>
     </header>
 
@@ -362,6 +374,8 @@
         </div>
     </footer>
 
+    <!-- Global Interactions -->
+    <script src='js/main.js'></script>
 </body>
 
 </html>
